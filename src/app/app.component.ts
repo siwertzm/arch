@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'arch';
+  title = 'The Arch';
+
+  pers: any = true;
+
+
+  constructor(){
+
+  }
+
+  physique(){
+    this.pers = true;
+  }
+
+  morale(){
+    this.pers = false;
+
+  }
 }
