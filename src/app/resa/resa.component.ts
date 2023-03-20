@@ -24,6 +24,7 @@ export class ResaComponent {
 
   validation(val: any){
    // this.route.navigateByUrl('merci')
+   //test
   }
 
   commande(){
