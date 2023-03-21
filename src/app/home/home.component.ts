@@ -10,7 +10,7 @@ import { ReservService } from '../reserv.service';
 })
 export class HomeComponent {
 
-  test: any = 1;
+  test: any = 0;
 
   msgExt: any;
   msgExtBalc: any;
@@ -62,22 +62,35 @@ export class HomeComponent {
   prixTotExt: any;
   fiscTotExt: any;
 
-  nbrBalc: any;
+  nbrCabBalc: any;
+  nbrPerBalc: any;
   prixTotBalc: any;
+  fiscTotBalc: any;
 
-  nbrLux: any;
+  nbrCabLux: any;
+  nbrPerLux: any;
   prixTotLux: any;
+  fiscTotLux: any;
 
-  nbrSuite: any;
+  nbrCabSuite: any;
+  nbrPerSuite: any;
   prixTotSuite: any;
+  fiscTotSuite: any;
 
-  nbrPres: any;
+
+  nbrCabPres: any;
+  nbrPerPres: any;
   prixTotPres: any;
+  fiscTotPres: any;
+
+
 
 
   constructor(private route: Router, private reservService: ReservService, private prixService: PrixService) {
 
   }
+
+
   resa(val: any) {
 
     this.test = 1;
@@ -135,7 +148,7 @@ export class HomeComponent {
     this.nbrCabExt = event.target.value;
     if (this.nbrCabExt >= (this.nbrPerExt/2) && this.nbrCabExt <= this.nbrPerExt){
       this.prixTotExt = (this.nbrCabExt*1000) + ((this.nbrPerExt)*750);
-      this.fiscTotExt = Math.round((((this.nbrCabExt*700) + (this.nbrPerExt*625))*0.34) + ((this.nbrCabExt*300) + (this.nbrPerExt*125)));
+      this.fiscTotExt = (((this.nbrCabExt*700) + (this.nbrPerExt*625))*0.34) + ((this.nbrCabExt*300) + (this.nbrPerExt*125));
       this.msgExt = '';
     } else if (this.nbrCabExt > this.nbrPerExt) {
       this.msgExt = 'Le nombre de cabines ne peux pas être supérieur au nombre de personnes';
@@ -163,62 +176,126 @@ export class HomeComponent {
   }
 
   InputBalc(event: any){
-    this.nbrBalc = event.target.value
+    this.nbrCabBalc = event.target.value;
+    if (this.nbrCabBalc >= (this.nbrPerBalc/2) && this.nbrCabBalc <= this.nbrPerBalc){
+      this.prixTotBalc = (this.nbrCabBalc*1100) + ((this.nbrPerBalc)*800);
+      this.fiscTotBalc = (((this.nbrCabBalc*770) + (this.nbrPerBalc*665))*0.34) + ((this.nbrCabBalc*330) + (this.nbrPerBalc*135));
+      this.msgExtBalc = '';
+    } else if (this.nbrCabBalc > this.nbrPerBalc) {
+      this.msgExtBalc = 'Le nombre de cabines ne peux pas être supérieur au nombre de personnes';
+      this.prixTotBalc = null;
+    } else {
+      this.msgExtBalc = 'Le nombre de personne doit être inferieur au double du nombre de cabines.';
+      this.prixTotBalc = null;
+    }
   }
 
   InputBalc2(event: any){
-    let nbr: any = event.target.value;
-    if (parseInt(nbr) > 2*parseInt(this.nbrBalc)){
+    this.nbrPerBalc = event.target.value;
+    console.log(this.nbrPerBalc);
+    if (parseInt(this.nbrPerBalc) > 2*parseInt(this.nbrCabBalc)){
       this.msgExtBalc = 'Le nombre de personne doit être inferieur au double du nombre de cabines.';
-      this.prixTotBalc = null
-    } else{
-      this.prixTotBalc = (this.nbrBalc*1100) + ((event.target.value)*800);
-      this.msgExtBalc = ''
+      this.prixTotBalc = null;
+    } else if(parseInt(this.nbrPerBalc) < parseInt(this.nbrCabBalc)) {
+      this.prixTotBalc = null;
+      this.msgExtBalc = 'Le nombre de personnes ne peux pas être inférieur au nombre de cabines';
+    } else {
+      this.prixTotBalc = (this.nbrCabBalc*1100) + ((this.nbrPerBalc)*800);
+      this.fiscTotBalc = (((this.nbrCabBalc*770) + (this.nbrPerBalc*665))*0.34) + ((this.nbrCabBalc*330) + (this.nbrPerBalc*135));
+      this.msgExtBalc = '';
     }
   }
 
   InputLux(event: any){
-    this.nbrLux = event.target.value
+    this.nbrCabLux = event.target.value;
+    if (this.nbrCabLux >= (this.nbrPerLux/2) && this.nbrCabLux <= this.nbrPerLux){
+      this.prixTotLux = (this.nbrCabLux*1150) + ((this.nbrPerLux)*825);
+      this.fiscTotLux = (((this.nbrCabLux*800) + (this.nbrPerLux*675))*0.34) + ((this.nbrCabLux*350) + (this.nbrPerLux*150));
+      this.msgLuxe = '';
+    } else if (this.nbrCabLux > this.nbrPerLux) {
+      this.msgLuxe = 'Le nombre de cabines ne peux pas être supérieur au nombre de personnes';
+      this.prixTotLux = null;
+    } else {
+      this.msgLuxe = 'Le nombre de personne doit être inferieur au double du nombre de cabines.';
+      this.prixTotLux = null;
+    }
   }
 
   InputLux2(event: any){
-    let nbr: any = event.target.value;
-    if (parseInt(nbr) > 2*parseInt(this.nbrLux)){
+    this.nbrPerLux = event.target.value;
+    console.log(this.nbrPerLux);
+    if (parseInt(this.nbrPerLux) > 2*parseInt(this.nbrCabLux)){
       this.msgLuxe = 'Le nombre de personne doit être inferieur au double du nombre de cabines.';
-      this.prixTotLux = null
-    } else{
-      this.prixTotLux = (this.nbrLux*1150) + ((event.target.value)*825);
-      this.msgLuxe = ''
+      this.prixTotLux = null;
+    } else if(parseInt(this.nbrPerLux) < parseInt(this.nbrCabLux)) {
+      this.prixTotLux = null;
+      this.msgLuxe = 'Le nombre de personnes ne peux pas être inférieur au nombre de cabines';
+    } else {
+      this.prixTotLux = (this.nbrCabLux*1150) + ((this.nbrPerLux)*825);
+      this.fiscTotLux = (((this.nbrCabLux*800) + (this.nbrPerLux*675))*0.34) + ((this.nbrCabLux*350) + (this.nbrPerLux*150));
+      this.msgLuxe = '';
     }
   }
 
   InputSuite(event: any){
-    this.nbrSuite = event.target.value
+    this.nbrCabSuite = event.target.value;
+    if (this.nbrCabSuite >= (this.nbrPerSuite/2) && this.nbrCabSuite <= this.nbrPerSuite){
+      this.prixTotSuite = (this.nbrCabSuite*1500) + ((this.nbrPerSuite)*1000);
+      this.fiscTotSuite = (((this.nbrCabSuite*1050) + (this.nbrPerSuite*825))*0.34) + ((this.nbrCabSuite*450) + (this.nbrPerSuite*175));
+      this.msgSuite = '';
+    } else if (this.nbrCabSuite > this.nbrPerSuite) {
+      this.msgSuite = 'Le nombre de cabines ne peux pas être supérieur au nombre de personnes';
+      this.prixTotSuite = null;
+    } else {
+      this.msgSuite = 'Le nombre de personne doit être inferieur au double du nombre de cabines.';
+      this.prixTotSuite = null;
+    }
   }
 
   InputSuite2(event: any){
-    let nbr: any = event.target.value;
-    if (parseInt(nbr) > 2*parseInt(this.nbrSuite)){
+    this.nbrPerSuite = event.target.value;
+    console.log(this.nbrPerSuite);
+    if (parseInt(this.nbrPerSuite) > 2*parseInt(this.nbrCabSuite)){
       this.msgSuite = 'Le nombre de personne doit être inferieur au double du nombre de cabines.';
-      this.prixTotSuite = null
-    } else{
-      this.prixTotSuite = (this.nbrSuite*1500) + ((event.target.value)*1000);
-      this.msgSuite = ''
+      this.prixTotSuite = null;
+    } else if(parseInt(this.nbrPerSuite) < parseInt(this.nbrCabSuite)) {
+      this.prixTotSuite = null;
+      this.msgSuite = 'Le nombre de personnes ne peux pas être inférieur au nombre de cabines';
+    } else {
+      this.prixTotSuite = (this.nbrCabSuite*1500) + ((this.nbrPerSuite)*1000);
+      this.fiscTotSuite = (((this.nbrCabSuite*1050) + (this.nbrPerSuite*825))*0.34) + ((this.nbrCabSuite*450) + (this.nbrPerSuite*175));
+      this.msgSuite = '';
     }
   }
 
   InputPres(event: any){
-    this.nbrPres = event.target.value
+    this.nbrCabPres = event.target.value;
+    if (this.nbrCabPres >= (this.nbrPerPres/2) && this.nbrCabPres <= this.nbrPerPres){
+      this.prixTotPres = (this.nbrCabPres*2750) + ((this.nbrPerPres)*1625);
+      this.fiscTotPres = (((this.nbrCabPres*1750) + (this.nbrPerPres*1375))*0.34) + ((this.nbrCabPres*1000) + (this.nbrPerPres*250));
+      this.msgSuitePres = '';
+    } else if (this.nbrCabPres > this.nbrPerPres) {
+      this.msgSuitePres = 'Le nombre de cabines ne peux pas être supérieur au nombre de personnes';
+      this.prixTotPres = null;
+    } else {
+      this.msgSuitePres = 'Le nombre de personne doit être inferieur au double du nombre de cabines.';
+      this.prixTotPres = null;
+    }
   }
 
   InputPres2(event: any){
-    let nbr: any = event.target.value;
-    if (parseInt(nbr) > 2*parseInt(this.nbrPres)){
+    this.nbrPerPres = event.target.value;
+    console.log(this.nbrPerPres);
+    if (parseInt(this.nbrPerPres) > 2*parseInt(this.nbrCabPres)){
       this.msgSuitePres = 'Le nombre de personne doit être inferieur au double du nombre de cabines.';
-      this.prixTotPres = null
-    } else{
-      this.prixTotPres = (this.nbrPres*2750) + ((event.target.value)*1625);
-      this.msgSuitePres = ''
+      this.prixTotPres = null;
+    } else if(parseInt(this.nbrPerPres) < parseInt(this.nbrCabPres)) {
+      this.prixTotPres = null;
+      this.msgSuitePres = 'Le nombre de personnes ne peux pas être inférieur au nombre de cabines';
+    } else {
+      this.prixTotPres = (this.nbrCabPres*2750) + ((this.nbrPerPres)*1625);
+      this.fiscTotPres = (((this.nbrCabPres*1750) + (this.nbrPerPres*1375))*0.34) + ((this.nbrCabPres*1000) + (this.nbrPerPres*250));
+      this.msgSuitePres = '';
     }
   }
 

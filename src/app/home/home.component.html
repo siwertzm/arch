@@ -2,211 +2,431 @@
   <div class="card display-flex mt-3 absolue">
     <!-- Default form register -->
     <form class="border border-light p-5" #register="ngForm" (ngSubmit)="resa(register.value)">
-      <p class="h2 mb-4 text-center">Choix des cabines</p>
-      <br>
-      <div class="row">
-        <div class="col-3">
-          
-        </div>
-        <div class="col-3 text-right">
-          <strong>Nombre <br>de cabines</strong>
-        </div>
-        <div class="col-3">
-          <strong>Nombre de personnes</strong> <br> (2/cabine maximum)
-        </div>
-        <div class="col-3">
-          <div class="row">
-            <div class="col">
-              <br>
-              <strong>Montant</strong>
-            </div>
-            <div class="col">
-              <strong>Coût net par personnes</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br>
-
-      <div class="row">
-        <div class="col-md-9">
-          <div class="row">
-            <div class="col-sm-6">
-              <br>
-              <h5>Cabine extérieure vue mer</h5>
-            </div>
-            <div class="col-sm-2">
-              <div class="mt-3"> 
-                <input type="number" (keyup)="InputExt($event)" ngModel="" name="cabExt" class="form-control" min="0">
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <div class="mt-3">
-                <input type="number" (keyup)="InputExt2($event)" ngModel="" name="persExt" class="form-control" max="{{nbrCabExt*2}}" min="{{nbrCabExt}}">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="row" >
-            <div class="col-sm text-center">
-              <br>
-              <div class="text-center">{{prixTotExt}}</div>
-            </div>
-            <div class="col-sm">
-              <br>
-              <div class="text-center">{{fiscTotExt}}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="rouge text-center">
-        <h6>{{msgExt}}</h6>
-      </div>
-
-      <div class="row">
-        <div class="col-md-9">
-          <div class="row">
-            <div class="col-sm-6">
-              <br>
-              <h5>Cabine extérieure balcon</h5>
-            </div>
-            <div class="col-sm-2">
-              <div class="mt-3">
-                <input type="number" (keyup)="InputBalc($event)" ngModel="" name="cabExtBalc" class="form-control" min="0" value="0" required>
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <div class="mt-3">
-                <input type="number" (keyup)="InputBalc2($event)" ngModel="" name="persExtBalc" class="form-control" min="0" value="0" required>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="row">
-            <div class="col-sm text-center">
-              <br>
-              <div class="text-center">{{prixTotBalc}}</div>
-            </div>
-            <div class="col-sm">
-              <br>
-              <div class="text-center">{{fisccoutBalcText}}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="rouge text-center">
-        <h6>{{msgExtBalc}}</h6>
-      </div>
-
-      <div class="row">
-        <div class="col-md-9">
-          <div class="row">
-            <div class="col-sm-6">
-              <br>
-              <h5>Cabine extérieure luxe</h5>
-            </div>
-            <div class="col-sm-2">
-              <div class="mt-3">
-                <input type="number" (keyup)="InputLux($event)" ngModel="" name="cabLuxe" class="form-control" min="0" value="0" required>
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <div class="mt-3">
-                <input type="number" (keyup)="InputLux2($event)" ngModel="" name="persLuxe" class="form-control" min="0" value="0" required>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="row">
-            <div class="col-sm text-center">
-              <br>
-              <div class="text-center">{{prixTotLux}}</div>
-            </div>
-            <div class="col-sm">
-              <br>
-              <div class="text-center">{{fisccoutLuxeText}}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="rouge text-center">
-        <h6>{{msgLuxe}}</h6>
-      </div>
-
-      <div class="row">
-        <div class="col-md-9">
-          <div class="row">
-            <div class="col-sm-6">
-              <br>
-              <h5>Suite Premium</h5>
-            </div>
-            <div class="col-sm-2">
-              <div class="mt-3">
-                <input type="number" (keyup)="InputSuite($event)" ngModel="" name="suite" class="form-control" min="0" value="0" required>
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <div class="mt-3">
-                <input type="number" (keyup)="InputSuite2($event)" ngModel="" name="persSuite" class="form-control" min="0" value="0" required>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="row">
-            <div class="col-sm text-center">
-              <br>
-              <div class="text-center">{{prixTotSuite}}</div>
-            </div>
-            <div class="col-sm">
-              <br>
-              <div class="text-center">{{fisccoutSuiteText}}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="rouge text-center">
-        <h6>{{msgSuite}}</h6>
-      </div>
-
-      <div class="row">
-        <div class="col-md-9">
-          <div class="row">
-            <div class="col-sm-6">
-              <br>
-              <h5>Suite Prestige</h5>
-            </div>
-            <div class="col-sm-2">
-              <div class="mt-3">
-                <input type="number" (keyup)="InputPres($event)" ngModel="" name="suitePres" class="form-control" min="0" value="0" required>
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <div class="mt-3">
-                <input type="number" (keyup)="InputPres2($event)" ngModel="" name="persSuitePres" class="form-control" min="0" value="0" required>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="row">
-            <div class="col-sm text-center">
-              <br>
-              <div class="text-center">{{prixTotPres}}</div>
-            </div>
-            <div class="col-sm">
-              <br>
-              <div class="text-center">{{fisccoutPresText}}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="rouge text-center">
+      <div *ngIf="test == 0">
+        <p class="h2 mb-4 text-center">Choix des cabines</p>
         <br>
-        <h6>{{msgSuitePres}}</h6>
+        <div class="row">
+          <div class="col-3">
+
+          </div>
+          <div class="col-3 text-right">
+            <strong>Nombre <br>de cabines</strong>
+          </div>
+          <div class="col-3">
+            <strong>Nombre de personnes</strong> <br> (2/cabine maximum)
+          </div>
+          <div class="col-3">
+            <div class="row">
+              <div class="col">
+                <br>
+                <strong>Montant</strong>
+              </div>
+              <div class="col">
+                <strong>Coût net par personnes</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-sm-6">
+                <br>
+                <h5>Cabine extérieure vue mer</h5>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputExt($event)" ngModel="" name="cabExt" class="form-control" min="0">
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputExt2($event)" ngModel="" name="persExt" class="form-control"
+                    max="{{nbrCabExt*2}}" min="{{nbrCabExt}}">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{prixTotExt}}</div>
+              </div>
+              <div class="col-sm">
+                <br>
+                <div class="text-center">{{fiscTotExt}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rouge text-center">
+          <h6>{{msgExt}}</h6>
+        </div>
+
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-sm-6">
+                <br>
+                <h5>Cabine extérieure balcon</h5>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputBalc($event)" ngModel="" name="cabExtBalc" class="form-control"
+                    min="0" value="0" required>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputBalc2($event)" ngModel="" name="persExtBalc" class="form-control"
+                    min="0" value="0" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{prixTotBalc}}</div>
+              </div>
+              <div class="col-sm">
+                <br>
+                <div class="text-center">{{fiscTotBalc}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rouge text-center">
+          <h6>{{msgExtBalc}}</h6>
+        </div>
+
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-sm-6">
+                <br>
+                <h5>Cabine extérieure luxe</h5>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputLux($event)" ngModel="" name="cabLuxe" class="form-control" min="0"
+                    value="0" required>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputLux2($event)" ngModel="" name="persLuxe" class="form-control"
+                    min="0" value="0" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{prixTotLux}}</div>
+              </div>
+              <div class="col-sm">
+                <br>
+                <div class="text-center">{{fiscTotLux}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rouge text-center">
+          <h6>{{msgLuxe}}</h6>
+        </div>
+
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-sm-6">
+                <br>
+                <h5>Suite Premium</h5>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputSuite($event)" ngModel="" name="suite" class="form-control" min="0"
+                    value="0" required>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputSuite2($event)" ngModel="" name="persSuite" class="form-control"
+                    min="0" value="0" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{prixTotSuite}}</div>
+              </div>
+              <div class="col-sm">
+                <br>
+                <div class="text-center">{{fiscTotSuite}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rouge text-center">
+          <h6>{{msgSuite}}</h6>
+        </div>
+
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-sm-6">
+                <br>
+                <h5>Suite Prestige</h5>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputPres($event)" ngModel="" name="suitePres" class="form-control"
+                    min="0" value="0" required>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputPres2($event)" ngModel="" name="persSuitePres" class="form-control"
+                    min="0" value="0" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{prixTotPres}}</div>
+              </div>
+              <div class="col-sm">
+                <br>
+                <div class="text-center">{{fiscTotPres}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rouge text-center">
+          <br>
+          <h6>{{msgSuitePres}}</h6>
+        </div>
+      </div>
+
+      <div *ngIf="test == 1">
+        <p class="h2 mb-4 text-center">Choix des cabines</p>
+        <br>
+        <div class="row">
+          <div class="col-3">
+
+          </div>
+          <div class="col-3 text-right">
+            <strong>Nombre <br>de cabines</strong>
+          </div>
+          <div class="col-3">
+            <strong>Nombre de personnes</strong> <br> (2/cabine maximum)
+          </div>
+          <div class="col-3">
+            <div class="row">
+              <div class="col">
+                <br>
+                <strong>Montant</strong>
+              </div>
+              <div class="col">
+                <strong>Coût net par personnes</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-sm-6">
+                <br>
+                <h5>Cabine extérieure vue mer</h5>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3 text-center">
+                  <p>{{nbrCabExt}}</p>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3 text-center">
+                  <p>{{nbrPerExt}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{prixTotExt}} €</div>
+              </div>
+              <div class="col-sm">
+                <br>
+                <div class="text-center">{{fiscTotExt}} €</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rouge text-center">
+          <h6>{{msgExt}}</h6>
+        </div>
+
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-sm-6">
+                <br>
+                <h5>Cabine extérieure balcon</h5>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3 text-center">
+                  <p>{{nbrCabBalc}}</p>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3 text-center">
+                  <p>{{nbrPerBalc}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{prixTotBalc}} €</div>
+              </div>
+              <div class="col-sm">
+                <br>
+                <div class="text-center">{{fiscTotBalc}} €</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rouge text-center">
+          <h6>{{msgExtBalc}}</h6>
+        </div>
+
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-sm-6">
+                <br>
+                <h5>Cabine extérieure luxe</h5>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3 text-center">
+                  <p>{{nbrCabLux}}</p>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3 text-center">
+                  <p>{{nbrPerLux}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{prixTotLux}} €</div>
+              </div>
+              <div class="col-sm">
+                <br>
+                <div class="text-center">{{fiscTotLux}} €</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rouge text-center">
+          <h6>{{msgLuxe}}</h6>
+        </div>
+
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-sm-6">
+                <br>
+                <h5>Suite Premium</h5>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3 text-center">
+                  <p>{{nbrCabSuite}}</p>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3 text-center">
+                  <p>{{nbrPerSuite}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{prixTotSuite}} €</div>
+              </div>
+              <div class="col-sm">
+                <br>
+                <div class="text-center">{{fiscTotSuite}} €</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rouge text-center">
+          <h6>{{msgSuite}}</h6>
+        </div>
+
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-sm-6">
+                <br>
+                <h5>Suite Prestige</h5>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3 text-center">
+                  <p>{{nbrCabPres}}</p>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3 text-center">
+                  <p>{{nbrPerPres}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{prixTotPres}} €</div>
+              </div>
+              <div class="col-sm">
+                <br>
+                <div class="text-center">{{fiscTotPres}} €</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rouge text-center">
+          <br>
+          <h6>{{msgSuitePres}}</h6>
+        </div>
       </div>
 
       <div *ngIf="test == 1">
@@ -218,13 +438,13 @@
         <h5><strong>Coût net après impact fiscal par personne :</strong> {{totalFisc}} € / personne
         </h5>
       </div>
-      <div *ngIf="test == 1">
+      <div *ngIf="test == 0">
         <button class="btn btn-info my-4 btn-block" type="submit">Valider</button>
       </div>
       <div *ngIf="test == 1">
         <button type="button" (click)="prix()" class="btn btn-info my-4 btn-block">réserver</button>
       </div>
-      <div *ngIf="test > 0">
+      <div *ngIf="test >= 0">
         <button type="button" (click)="reload()" class="btn btn-danger my-4 btn-block">Annuler</button>
       </div>
 
