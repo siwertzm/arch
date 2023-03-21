@@ -36,26 +36,26 @@
               <h5>Cabine extérieure vue mer</h5>
             </div>
             <div class="col-sm-2">
-              <div class="mt-3">
-                <input type="number" ngModel="" name="cabExt" class="form-control" min="0" required>
+              <div class="mt-3"> 
+                <input type="number" (keyup)="InputExt($event)" ngModel="" name="cabExt" class="form-control" min="0">
               </div>
             </div>
             <div class="col-sm-2">
               <div class="mt-3">
-                <input type="number" ngModel="" name="persExt" class="form-control" min="0" required>
+                <input type="number" (keyup)="InputExt2($event)" ngModel="" name="persExt" class="form-control" max="{{nbrCabExt*2}}" min="{{nbrCabExt}}">
               </div>
             </div>
           </div>
         </div>
         <div class="col-md">
-          <div class="row" *ngIf="totalCout">
+          <div class="row" >
             <div class="col-sm text-center">
               <br>
-              <div class="text-center">{{coutText}}</div>
+              <div class="text-center">{{prixTotExt}}</div>
             </div>
             <div class="col-sm">
               <br>
-              <div class="text-center">{{fisccoutText}}</div>
+              <div class="text-center">{{fiscTotExt}}</div>
             </div>
           </div>
         </div>
@@ -73,21 +73,21 @@
             </div>
             <div class="col-sm-2">
               <div class="mt-3">
-                <input type="number" ngModel="" name="cabExtBalc" class="form-control" min="0" required>
+                <input type="number" (keyup)="InputBalc($event)" ngModel="" name="cabExtBalc" class="form-control" min="0" value="0" required>
               </div>
             </div>
             <div class="col-sm-2">
               <div class="mt-3">
-                <input type="number" ngModel="" name="persExtBalc" class="form-control" min="0" required>
+                <input type="number" (keyup)="InputBalc2($event)" ngModel="" name="persExtBalc" class="form-control" min="0" value="0" required>
               </div>
             </div>
           </div>
         </div>
         <div class="col-md">
-          <div class="row" *ngIf="totalCout">
+          <div class="row">
             <div class="col-sm text-center">
               <br>
-              <div class="text-center">{{coutBalcText}}</div>
+              <div class="text-center">{{prixTotBalc}}</div>
             </div>
             <div class="col-sm">
               <br>
@@ -109,21 +109,21 @@
             </div>
             <div class="col-sm-2">
               <div class="mt-3">
-                <input type="number" ngModel="" name="cabLuxe" class="form-control" min="0" required>
+                <input type="number" (keyup)="InputLux($event)" ngModel="" name="cabLuxe" class="form-control" min="0" value="0" required>
               </div>
             </div>
             <div class="col-sm-2">
               <div class="mt-3">
-                <input type="number" ngModel="" name="persLuxe" class="form-control" min="0" required>
+                <input type="number" (keyup)="InputLux2($event)" ngModel="" name="persLuxe" class="form-control" min="0" value="0" required>
               </div>
             </div>
           </div>
         </div>
         <div class="col-md">
-          <div class="row" *ngIf="totalCout">
+          <div class="row">
             <div class="col-sm text-center">
               <br>
-              <div class="text-center">{{coutLuxeText}}</div>
+              <div class="text-center">{{prixTotLux}}</div>
             </div>
             <div class="col-sm">
               <br>
@@ -145,21 +145,21 @@
             </div>
             <div class="col-sm-2">
               <div class="mt-3">
-                <input type="number" ngModel="" name="suite" class="form-control" min="0" required>
+                <input type="number" (keyup)="InputSuite($event)" ngModel="" name="suite" class="form-control" min="0" value="0" required>
               </div>
             </div>
             <div class="col-sm-2">
               <div class="mt-3">
-                <input type="number" ngModel="" name="persSuite" class="form-control" min="0" required>
+                <input type="number" (keyup)="InputSuite2($event)" ngModel="" name="persSuite" class="form-control" min="0" value="0" required>
               </div>
             </div>
           </div>
         </div>
         <div class="col-md">
-          <div class="row" *ngIf="totalCout">
+          <div class="row">
             <div class="col-sm text-center">
               <br>
-              <div class="text-center">{{coutSuiteText}}</div>
+              <div class="text-center">{{prixTotSuite}}</div>
             </div>
             <div class="col-sm">
               <br>
@@ -181,21 +181,21 @@
             </div>
             <div class="col-sm-2">
               <div class="mt-3">
-                <input type="number" ngModel="" name="suitePres" class="form-control" min="0" required>
+                <input type="number" (keyup)="InputPres($event)" ngModel="" name="suitePres" class="form-control" min="0" value="0" required>
               </div>
             </div>
             <div class="col-sm-2">
               <div class="mt-3">
-                <input type="number" ngModel="" name="persSuitePres" class="form-control" min="0" required>
+                <input type="number" (keyup)="InputPres2($event)" ngModel="" name="persSuitePres" class="form-control" min="0" value="0" required>
               </div>
             </div>
           </div>
         </div>
         <div class="col-md">
-          <div class="row" *ngIf="totalCout">
+          <div class="row">
             <div class="col-sm text-center">
               <br>
-              <div class="text-center">{{coutPresText}}</div>
+              <div class="text-center">{{prixTotPres}}</div>
             </div>
             <div class="col-sm">
               <br>
@@ -212,13 +212,13 @@
       <div *ngIf="test == 1">
         <br>
         <br>
-        <h5><strong>Montant total des cabines :</strong> {{totalCout | number: '1.0-0'}} €</h5>
+        <h5><strong>Montant total des cabines :</strong> {{totalCout}} €</h5>
       </div>
       <div *ngIf="test == 1">
-        <h5><strong>Coût net après impact fiscal par personne :</strong> {{totalFisc | number: '1.0-0'}} € / personne
+        <h5><strong>Coût net après impact fiscal par personne :</strong> {{totalFisc}} € / personne
         </h5>
       </div>
-      <div *ngIf="test == 0">
+      <div *ngIf="test == 1">
         <button class="btn btn-info my-4 btn-block" type="submit">Valider</button>
       </div>
       <div *ngIf="test == 1">
