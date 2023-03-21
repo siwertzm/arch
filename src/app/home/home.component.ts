@@ -56,46 +56,47 @@ export class HomeComponent {
     this.test = 1;
 
     if (val.persExt > 2 * val.cabExt) {
-      this.msgExt = 'Le nombre de personne doit etre inferieur au double des cabines.';
+      this.msgExt = 'Le nombre de personne doit être inferieur au double du nombre de cabines.';
       this.test = 2;
     } else if (val.persExtBalc > 2 * val.cabExtBalc) {
-      this.msgExtBalc = 'Le nombre de personne doit etre inferieur au double des cabines.';
+      this.msgExtBalc = 'Le nombre de personne doit être inferieur au double du nombre de cabines.';
       this.test = 2;
     } else if (val.persLuxe > 2 * val.cabLuxe) {
-      this.msgLuxe = 'Le nombre de personne doit etre inferieur au double des cabines.';
+      this.msgLuxe = 'Le nombre de personne doit être inferieur au double du nombre de cabines.';
       this.test = 2;
     } else if (val.persSuite > 2 * val.suite) {
-      this.msgSuite = 'Le nombre de personne doit etre inferieur au double des cabines.';
+      this.msgSuite = 'Le nombre de personne doit être inferieur au double du nombre de cabines.';
       this.test = 2;
     } else if (val.persSuitePres > 2 * val.suitePres) {
-      this.msgSuitePres = 'Le nombre de personne doit etre inferieur au double des cabines.';
+      this.msgSuitePres = 'Le nombre de personne doit être inferieur au double du nombre de cabines.';
       this.test = 2;
     } else {
       this.cout = (val.cabExt * 1000 + val.persExt * 750)
-      this.coutText = this.cout + " €"
+      this.coutText = Math.round(this.cout) + " €"
       this.coutBalc = (val.cabExtBalc * 1100 + val.persExtBalc * 800)
-      this.coutBalcText = this.coutBalc + " €"
+      this.coutBalcText = Math.round(this.coutBalc) + " €"
       this.coutLuxe = (val.cabLuxe * 1150 + val.persLuxe * 825)
-      this.coutLuxeText = this.coutLuxe + " €"
+      this.coutLuxeText = Math.round(this.coutLuxe) + " €"
       this.coutSuite = (val.suite * 1500 + val.persSuite * 1000)
-      this.coutSuiteText = this.coutSuite + " €"
+      this.coutSuiteText = Math.round(this.coutSuite) + " €"
       this.coutPres = (val.suitePres * 2750 + val.persSuitePres * 1625)
-      this.coutPresText = this.coutPres + " €"
+      this.coutPresText = Math.round(this.coutPres) + " €"
 
       this.fisccout = ((val.cabExt * 700 + val.persExt * 625) * 0.34) + (val.cabExt * 300 + val.persExt * 125)
-      this.fisccoutText = this.fisccout + " €"
+      this.fisccoutText = Math.round(this.fisccout) + " €"
       this.fisccoutBalc = ((val.cabExtBalc * 770 + val.persExtBalc * 665) * 0.34) + (val.cabExtBalc * 330 + val.persExtBalc * 135)
-      this.fisccoutBalcText = this.fisccoutBalc + " €"
+      this.fisccoutBalcText = Math.round(this.fisccoutBalc) + " €"
       this.fisccoutLuxe = ((val.cabLuxe * 800 + val.persLuxe * 675) * 0.34) + (val.cabLuxe * 350 + val.persLuxe * 150)
-      this.fisccoutLuxeText = this.fisccoutLuxe + " €"
+      this.fisccoutLuxeText = Math.round(this.fisccoutLuxe) + " €"
       this.fisccoutSuite = ((val.suite * 1050 + val.persSuite * 825) * 0.34) + (val.suite * 450 + val.persSuite * 175)
-      this.fisccoutSuiteText = this.fisccoutSuite + " €"
+      this.fisccoutSuiteText = Math.round(this.fisccoutSuite) + " €"
       this.fisccoutPres = ((val.suitePres * 1750 + val.persSuitePres * 1375) * 0.34) + (val.suitePres * 1000 + val.persSuitePres * 250)
-      this.fisccoutPresText = this.fisccoutPres + " €"
+      this.fisccoutPresText = Math.round(this.fisccoutPres) + " €"
       this.totalCout = this.cout + this.coutBalc + this.coutLuxe + this.coutSuite + this.coutPres
-      this.totalFisc = this.fisccout + this.fisccoutBalc + this.fisccoutLuxe + this.fisccoutSuite + this.fisccoutPres
+      this.totalFisc = (this.fisccout + this.fisccoutBalc + this.fisccoutLuxe + this.fisccoutSuite + this.fisccoutPres)/(val.persExt + val.persExtBalc + val.persLuxe + val.persSuite + val.persSuitePres)
       this.reservService.setNbrCabine(val);
       this.reserv = true;
+      console.log(val);
     }
   }
 

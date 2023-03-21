@@ -1,102 +1,97 @@
-<div>
-    <div class="col-md test">
-        <div style="width: 100%">
-            <div class="ml-3 mr-3">
-                <div>
-                    <!-- Default form register -->
-                    <form class="border border-light p-5" #register="ngForm" (ngSubmit)="validation(register.value)">
-                        <p class="h4 mb-4 text-center">Formulaire de validation</p>
-                        <div class="row">
-                            <div class="col-sm">
-                                <div class="md-form">
-                                    <label class="form-label" for="nomform">Nom</label>
-                                    <input type="text" ngModel="" name="nom" class="form-control" id="nomform" required>
-                                </div>
-                            </div>
-                            <div class="col-sm">
-                                <div class="md-form">
-                                    <label class="form-label" for="prenomform">Prenom</label>
-                                    <input type="text" ngModel="" name="prenom" class="form-control" id="prenomform" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <div class="md-form">
-                                    <label class="form-label" for="mailform">Adresse mail</label>
-                                    <input type="text" ngModel="" name="mail" class="form-control" id="mailform"  required>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="md-form">
-                                    <label class="form-label" for="telform">Téléphone</label>
-                                    <input type="text" ngModel="" name="tel" class="form-control" id="telform"  required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-2">
-                                <div class="md-form">
-                                    <label class="form-label" for="numform">N°</label>
-                                    <input type="number" ngModel="" name="num" class="form-control" id="numform"  required>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="md-form">
-                                    <label class="form-label" for="rueform">rue</label>
-                                    <input type="text" ngModel="" name="rue" class="form-control" id="rueform"  required>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="md-form">
-                                    <label class="form-label" for="villeform">VILLE</label>
-                                    <input type="text" ngModel="" name="ville" class="form-control" id="villeform"  required>
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="md-form">
-                                    <label class="form-label" for="codeform">Code Postal</label>
-                                    <input required type="number" ngModel="" name="code" class="form-control" id="codeform">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <h4><strong>Récapitulatif Commande :</strong></h4>
-                            <div class="row">
-                                <div class="col-sm">
-                                    <div *ngIf="cab.cabExt">Cabine Extérieur : {{cab.cabExt}}</div>
-                                    <div *ngIf="cab.persExt">Nombre Personne : {{cab.persExt}}</div>
-                                </div>
-                                <div class="col-sm">
-                                    <div *ngIf="cab.cabExtBalc">Cabine Extérieur vue Mer : {{cab.cabExtBalc}}</div>
-                                    <div *ngIf="cab.persExtBalc">Nombre Personne : {{cab.persExtBalc}}</div>
-                                </div>
-                                <div class="col-sm">
-                                    <div *ngIf="cab.cabLuxe">Cabine Luxe : {{cab.cabLuxe}}</div>
-                                    <div *ngIf="cab.persLuxe">Nombre Personne : {{cab.persLuxe}}</div>
-                                </div>
-                                <div class="col-sm">
-                                    <div *ngIf="cab.suite">Suite Premium : {{cab.suite}}</div>
-                                    <div *ngIf="cab.persSuite">Nombre Personne : {{cab.persSuite}}</div>
-                                </div>
-                                <div class="col-sm">
-                                    <div *ngIf="cab.suitePres">Suite Prestige : {{cab.suitePres}}</div>
-                                    <div *ngIf="cab.persSuitePres">Nombre Personne : {{cab.persSuitePres}}</div>
-                                </div>
-                            </div>
-                            <br>
-                            <div>
-                                <h5><strong>Montant total: </strong>{{prixTotal}} €</h5>
-                                <h5><strong>Montant total après impact fiscal: </strong>{{prixImpot}} €</h5>
-                            </div>
-                        </div>
-                        <div>
-                            <button class="btn btn-info my-4 btn-block" type="submit">Valider</button>
-                        </div>
-                        <p class="text-center">Return to <a href="https://www.the-arch.eu/">The Arch</a> website.
-                    </form>
+<div style="margin: auto; width: 75%">
+    <div class="card display-flex mt-5 absolue">
+        <!-- Default form register -->
+        <form class="border border-light p-5" #register="ngForm" (ngSubmit)="validation(register.value)">
+            <p class="h4 mb-4 text-center">Renseignement personel</p>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="md-form">
+                        <label class="form-label" for="nomform">Nom</label>
+                        <input type="text" ngModel="" name="nom" class="form-control" id="nomform" required>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="md-form">
+                        <label class="form-label" for="prenomform">Prenom</label>
+                        <input type="text" ngModel="" name="prenom" class="form-control" id="prenomform" required>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="md-form">
+                        <label class="form-label" for="mailform">Adresse mail</label>
+                        <input type="text" ngModel="" name="mail" class="form-control" id="mailform" required>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="md-form">
+                        <label class="form-label" for="telform">Téléphone</label>
+                        <input type="text" ngModel="" name="tel" class="form-control" id="telform" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="md-form">
+                        <label class="form-label" for="numform">N°</label>
+                        <input type="number" ngModel="" name="num" class="form-control" id="numform" required>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="md-form">
+                        <label class="form-label" for="rueform">rue</label>
+                        <input type="text" ngModel="" name="rue" class="form-control" id="rueform" required>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="md-form">
+                        <label class="form-label" for="villeform">VILLE</label>
+                        <input type="text" ngModel="" name="ville" class="form-control" id="villeform" required>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="md-form">
+                        <label class="form-label" for="codeform">Code Postal</label>
+                        <input required type="number" ngModel="" name="code" class="form-control" id="codeform">
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3">
+                <h4><strong>Récapitulatif Commande :</strong></h4>
+                <div class="row">
+                    <div class="col-sm">
+                        <div *ngIf="cab.cabExt">Cabines extérieure vue mer : {{cab.cabExt}}</div>
+                        <div *ngIf="cab.persExt">Nombre de personnes : {{cab.persExt}}</div>
+                    </div>
+                    <div class="col-sm">
+                        <div *ngIf="cab.cabExtBalc">Cabines extérieure balcon : {{cab.cabExtBalc}}</div>
+                        <div *ngIf="cab.persExtBalc">Nombre de personnes : {{cab.persExtBalc}}</div>
+                    </div>
+                    <div class="col-sm">
+                        <div *ngIf="cab.cabLuxe">Cabines extérieure luxe : {{cab.cabLuxe}}</div>
+                        <div *ngIf="cab.persLuxe">Nombre de personnes : {{cab.persLuxe}}</div>
+                    </div>
+                    <div class="col-sm">
+                        <div *ngIf="cab.suite">Suites premium : {{cab.suite}}</div>
+                        <div *ngIf="cab.persSuite">Nombre de personnes : {{cab.persSuite}}</div>
+                    </div>
+                    <div class="col-sm">
+                        <div *ngIf="cab.suitePres">Suites prestige : {{cab.suitePres}}</div>
+                        <div *ngIf="cab.persSuitePres">Nombre de personnes : {{cab.persSuitePres}}</div>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <h5><strong>Montant total: </strong>{{prixTotal | number: '1.0-0'}} €</h5>
+                    <h5><strong>Montant net après impact fiscal par personne: </strong>{{prixImpot | number: '1.0-0'}} € / personne
+                    </h5>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-info my-4 btn-block" type="submit">Valider</button>
+            </div>
+            <p class="text-center">Return to <a href="https://www.the-arch.eu/">The Arch</a> website.
+        </form>
     </div>
 </div>

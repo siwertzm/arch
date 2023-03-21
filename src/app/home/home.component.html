@@ -1,221 +1,234 @@
-<div>
-  <div class="col-md test">
-    <div style="width: 100%">
-      <div class="ml-3 mr-3">
-        <div>
-          <!-- Default form register -->
-          <form class="border border-light p-5" #register="ngForm" (ngSubmit)="resa(register.value)">
-            <p class="h4 mb-4 text-center">Formulaire des cabines</p>
-            <div class="row">
-              <div class="col-sm">
-                <br>
-                <br>
-                <h5>Cabine extérieur</h5>
-              </div>
-              <div class="col-sm">
-                <div class="md-form">
-                  <label class="form-label" for="cabform">Nbr de cabine</label>
-                  <input type="number" ngModel="" name="cabExt" class="form-control" id="cabform" required>
-                </div>
-              </div>
-              <div class="col-sm">
-                <div class="md-form">
-                  <label class="form-label" for="persform">Nbr de personne (deux par cabine maximum)</label>
-                  <input type="number" ngModel="" name="persExt" class="form-control" id="persform">
-                </div>
-              </div>
-              <div class="row" *ngIf="totalCout">
-                <div class="col-sm">
-                  <strong>Montant Total</strong>
-                  <br>
-                  <br>
-                  <div class="text-center">{{coutText}}</div>
-                </div>
-                <div class="col-sm">
-                  <strong>Coût net après impact fiscal</strong>
-                  <br>
-                  <div class="text-center">{{fisccoutText}}</div>
-                </div>
-              </div>
-            </div>
-            <div class="rouge text-center">
-              <h6>{{msgExt}}</h6>
-            </div>
-            <div class="row">
-              <div class="col-sm">
-                <br>
-                <br>
-                <h5>Cabine extérieur balcon vue mer</h5>
-              </div>
-              <div class="col-sm">
-                <div class="md-form">
-                  <label class="form-label" for="cabBalcform">Nombre de cabine</label>
-                  <input type="number" ngModel="" name="cabExtBalc" class="form-control" id="cabBalcform">
-                </div>
-              </div>
-              <div class="col-sm">
-                <div class="md-form">
-                  <label class="form-label" for="persBalcform">Nombre de personne (deux par cabine maximum)</label>
-                  <input type="number" ngModel="" name="persExtBalc" class="form-control" id="persBalcform">
-                </div>
-              </div>
-              <div class="row" *ngIf="totalCout">
-                <div class="col-sm">
-                  <div class="ml-5 mr-5">
-                    <br>
-                    <br>
-                    {{coutBalcText}}
-                  </div>
-                </div>
-                <div class="col-sm">
-                  <div class="ml-5 mr-5">
-                    <br>
-                    <br>
-                    {{fisccoutBalcText}}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="rouge text-center">
-              <h6>{{msgExtBalc}}</h6>
-            </div>
-            <div class="row">
-              <div class="col-sm">
-                <br>
-                <br>
-                <h5>Cabine extérieur balcon luxe</h5>
-              </div>
-              <div class="col-sm">
-                <div class="md-form">
-                  <label class="form-label" for="cabLuxeform">Nombre de cabine</label>
-                  <input type="number" ngModel="" name="cabLuxe" class="form-control" id="cabLuxeform">
-                </div>
-              </div>
-              <div class="col-sm">
-                <div class="md-form">
-                  <label class="form-label" for="persform">Nombre de personne (deux par cabine maximum)</label>
-                  <input type="number" ngModel="" name="persLuxe" class="form-control" id="persform">
-                </div>
-              </div>
-              <div class="row" *ngIf="totalCout">
-                <div class="col-sm">
-                  <div class="ml-5 mr-5">
-                    <br>
-                    <br>
-                    {{coutLuxeText}}
-                  </div>
-                </div>
-                <div class="col-sm">
-                  <div class="ml-5 mr-5">
-                    <br>
-                    <br>
-                    {{fisccoutLuxeText}}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="rouge text-center">
-              <h6>{{msgLuxe}}</h6>
-            </div>
-            <div class="row">
-              <div class="col-sm">
-                <br>
-                <br>
-                <h5>Suite premium</h5>
-              </div>
-              <div class="col-sm">
-                <div class="md-form">
-                  <label class="form-label" for="suiteform">Nombre de cabine</label>
-                  <input type="number" ngModel="" name="suite" class="form-control" id="suiteform">
-                </div>
-              </div>
-              <div class="col-sm">
-                <div class="md-form">
-                  <label class="form-label" for="persSuiteform">Nombre de personne (deux par cabine maximum)</label>
-                  <input type="number" ngModel="" name="persSuite" class="form-control" id="persSuiteform">
-                </div>
-              </div>
-              <div class="row" *ngIf="totalCout">
-                <div class="col-sm">
-                  <div class="ml-5 mr-5">
-                    <br>
-                    <br>
-                    {{coutSuiteText}}
-                  </div>
-                </div>
-                <div class="col-sm">
-                  <div class="ml-5 mr-5">
-                    <br>
-                    <br>
-                    {{fisccoutSuiteText}}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="rouge text-center">
-              <h6>{{msgSuite}}</h6>
-            </div>
-            <div class="row">
+<div style="margin: auto; width: 61%">
+  <div class="card display-flex mt-3 absolue">
+    <!-- Default form register -->
+    <form class="border border-light p-5" #register="ngForm" (ngSubmit)="resa(register.value)">
+      <p class="h2 mb-4 text-center">Choix des cabines</p>
+      <br>
+      <div class="row">
+        <div class="col-3">
+          
+        </div>
+        <div class="col-3 text-right">
+          <strong>Nombre <br>de cabines</strong>
+        </div>
+        <div class="col-3">
+          <strong>Nombre de personnes</strong> <br> (2/cabine maximum)
+        </div>
+        <div class="col-3">
+          <div class="row">
+            <div class="col">
               <br>
-              <br>
-              <div class="col-sm">
-                <br>
-                <br>
-                <h5>Suite prestige</h5>
-              </div>
-              <div class="col-sm">
-                <div class="md-form">
-                  <label class="form-label" for="suitePresform">Nombre de cabine</label>
-                  <input type="number" ngModel="" name="suitePres" class="form-control" id="suitePresform">
-                </div>
-              </div>
-              <div class="col-sm">
-                <div class="md-form">
-                  <label class="form-label" for="persSuitePresform">Nombre de personne (deux par cabine
-                    maximum)</label>
-                  <input type="number" ngModel="" name="persSuitePres" class="form-control" id="persSuitePresform">
-                </div>
-              </div>
-              <div class="row" *ngIf="totalCout">
-                <div class="col-sm">
-                  <div class="ml-5 mr-5">
-                    <br>
-                    <br>
-                    {{coutPresText}}
-                  </div>
-                </div>
-                <div class="col-sm">
-                  <div class="ml-5 mr-5">
-                    <br>
-                    <br>
-                    {{fisccoutPresText}}
-                  </div>
-                </div>
-              </div>
+              <strong>Montant</strong>
             </div>
-            <div class="rouge text-center">
-              <h6>{{msgSuitePres}}</h6>
+            <div class="col">
+              <strong>Coût net par personnes</strong>
             </div>
-            <div>
-              <h5><strong>Montant Total des cabine :</strong> {{totalCout}} €</h5>
-            </div>
-            <div>
-              <h5><strong>Coût après impact fiscal otal des cabine :</strong> {{totalFisc}} €</h5>
-            </div>
-            <div *ngIf="test == 0">
-              <button class="btn btn-info my-4 btn-block" type="submit">Valider</button>
-            </div>
-            <div *ngIf="test == 1">
-              <button type="button" (click)="prix()" class="btn btn-info my-4 btn-block">réserver</button>
-            </div>
-            <div *ngIf="test == 2">
-              <button type="button" (click)="reload()" class="btn btn-danger my-4 btn-block">Annuler</button>
-            </div>
-
-            <p class="text-center">Return to <a href="https://www.the-arch.eu/">The Arch</a> website.
-          </form>
+          </div>
         </div>
       </div>
-    </div>
+      <br>
+
+      <div class="row">
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-sm-6">
+              <br>
+              <h5>Cabine extérieure vue mer</h5>
+            </div>
+            <div class="col-sm-2">
+              <div class="mt-3">
+                <input type="number" ngModel="" name="cabExt" class="form-control" min="0" required>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="mt-3">
+                <input type="number" ngModel="" name="persExt" class="form-control" min="0" required>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="row" *ngIf="totalCout">
+            <div class="col-sm text-center">
+              <br>
+              <div class="text-center">{{coutText}}</div>
+            </div>
+            <div class="col-sm">
+              <br>
+              <div class="text-center">{{fisccoutText}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rouge text-center">
+        <h6>{{msgExt}}</h6>
+      </div>
+
+      <div class="row">
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-sm-6">
+              <br>
+              <h5>Cabine extérieure balcon</h5>
+            </div>
+            <div class="col-sm-2">
+              <div class="mt-3">
+                <input type="number" ngModel="" name="cabExtBalc" class="form-control" min="0" required>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="mt-3">
+                <input type="number" ngModel="" name="persExtBalc" class="form-control" min="0" required>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="row" *ngIf="totalCout">
+            <div class="col-sm text-center">
+              <br>
+              <div class="text-center">{{coutBalcText}}</div>
+            </div>
+            <div class="col-sm">
+              <br>
+              <div class="text-center">{{fisccoutBalcText}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rouge text-center">
+        <h6>{{msgExtBalc}}</h6>
+      </div>
+
+      <div class="row">
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-sm-6">
+              <br>
+              <h5>Cabine extérieure luxe</h5>
+            </div>
+            <div class="col-sm-2">
+              <div class="mt-3">
+                <input type="number" ngModel="" name="cabLuxe" class="form-control" min="0" required>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="mt-3">
+                <input type="number" ngModel="" name="persLuxe" class="form-control" min="0" required>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="row" *ngIf="totalCout">
+            <div class="col-sm text-center">
+              <br>
+              <div class="text-center">{{coutLuxeText}}</div>
+            </div>
+            <div class="col-sm">
+              <br>
+              <div class="text-center">{{fisccoutLuxeText}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rouge text-center">
+        <h6>{{msgLuxe}}</h6>
+      </div>
+
+      <div class="row">
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-sm-6">
+              <br>
+              <h5>Suite Premium</h5>
+            </div>
+            <div class="col-sm-2">
+              <div class="mt-3">
+                <input type="number" ngModel="" name="suite" class="form-control" min="0" required>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="mt-3">
+                <input type="number" ngModel="" name="persSuite" class="form-control" min="0" required>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="row" *ngIf="totalCout">
+            <div class="col-sm text-center">
+              <br>
+              <div class="text-center">{{coutSuiteText}}</div>
+            </div>
+            <div class="col-sm">
+              <br>
+              <div class="text-center">{{fisccoutSuiteText}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rouge text-center">
+        <h6>{{msgSuite}}</h6>
+      </div>
+
+      <div class="row">
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-sm-6">
+              <br>
+              <h5>Suite Prestige</h5>
+            </div>
+            <div class="col-sm-2">
+              <div class="mt-3">
+                <input type="number" ngModel="" name="suitePres" class="form-control" min="0" required>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="mt-3">
+                <input type="number" ngModel="" name="persSuitePres" class="form-control" min="0" required>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="row" *ngIf="totalCout">
+            <div class="col-sm text-center">
+              <br>
+              <div class="text-center">{{coutPresText}}</div>
+            </div>
+            <div class="col-sm">
+              <br>
+              <div class="text-center">{{fisccoutPresText}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rouge text-center">
+        <br>
+        <h6>{{msgSuitePres}}</h6>
+      </div>
+
+      <div *ngIf="test == 1">
+        <br>
+        <br>
+        <h5><strong>Montant total des cabines :</strong> {{totalCout | number: '1.0-0'}} €</h5>
+      </div>
+      <div *ngIf="test == 1">
+        <h5><strong>Coût net après impact fiscal par personne :</strong> {{totalFisc | number: '1.0-0'}} € / personne
+        </h5>
+      </div>
+      <div *ngIf="test == 0">
+        <button class="btn btn-info my-4 btn-block" type="submit">Valider</button>
+      </div>
+      <div *ngIf="test == 1">
+        <button type="button" (click)="prix()" class="btn btn-info my-4 btn-block">réserver</button>
+      </div>
+      <div *ngIf="test > 0">
+        <button type="button" (click)="reload()" class="btn btn-danger my-4 btn-block">Annuler</button>
+      </div>
+
+      <p class="text-center">Return to <a href="https://www.the-arch.eu/">The Arch</a> website.
+    </form>
   </div>
 </div>
