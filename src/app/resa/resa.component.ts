@@ -23,8 +23,7 @@ export class ResaComponent {
   }
 
   validation(val: any){
-   // this.route.navigateByUrl('merci')
-   //test
+   this.route.navigateByUrl('merci')
   }
 
   commande(){
