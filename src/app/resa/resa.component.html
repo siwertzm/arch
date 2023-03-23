@@ -1,22 +1,22 @@
 <div style="margin: auto; width: 75%">
-    <div class="card display-flex mt-5 absolue">
+    <div class="card display-flex mt-3 absolue">
         <!-- Default form register -->
-        <form class="border border-light p-5" #register="ngForm" (ngSubmit)="validation(register.value)">
+        <form class="border border-light pt-3 pl-5 pr-5" id="contact-form" name="contact-form" action="https://formsubmit.co/siwertzm@gmail.com" method="POST">
             <div>
-                
+                <i (click)="test()" class="fas fa-arrow-left"></i>
             </div>
             <p class="h4 mb-4 text-center">Renseignements personnels</p>
             <div class="row">
                 <div class="col-sm">
                     <div class="md-form">
                         <label class="form-label" for="nomform">Nom</label>
-                        <input type="text" ngModel="" name="nom" class="form-control" id="nomform" required>
+                        <input type="text"  name="nom" class="form-control" id="nomform" required/>
                     </div>
                 </div>
                 <div class="col-sm">
                     <div class="md-form">
                         <label class="form-label" for="prenomform">Prénom</label>
-                        <input type="text" ngModel="" name="prenom" class="form-control" id="prenomform" required>
+                        <input type="text"  name="prénom" class="form-control" id="prenomform" required/>
                     </div>
                 </div>
             </div>
@@ -24,13 +24,13 @@
                 <div class="col-sm-8">
                     <div class="md-form">
                         <label class="form-label" for="mailform">Adresse mail</label>
-                        <input type="text" ngModel="" name="mail" class="form-control" id="mailform" required>
+                        <input type="email"  name="mail" class="form-control" id="mailform" required/>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="md-form">
                         <label class="form-label" for="telform">Téléphone</label>
-                        <input type="text" ngModel="" name="tel" class="form-control" id="telform" required>
+                        <input type="text"  name="téléphone" class="form-control" id="telform" required/>
                     </div>
                 </div>
             </div>
@@ -38,25 +38,29 @@
                 <div class="col-sm-4">
                     <div class="md-form">
                         <label class="form-label" for="rueform">Adresse</label>
-                        <input type="text" ngModel="" name="rue" class="form-control" id="rueform" required>
+                        <input type="text"  name="adresse" class="form-control" id="rueform" required/>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="md-form">
                         <label class="form-label" for="villeform">Ville</label>
-                        <input type="text" ngModel="" name="ville" class="form-control" id="villeform" required>
+                        <input type="text"  name="ville" class="form-control" id="villeform" required/>
                     </div>
                 </div>
                 <div class="col-sm-2">
                     <div class="md-form">
                         <label class="form-label" for="codeform">Code Postal</label>
-                        <input required type="number" ngModel="" name="code" class="form-control" id="codeform">
+                        <input required type="number"  name="codePostal" class="form-control" id="codeform"/>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="md-form">
                         <label class="form-label" for="paysform">Pays</label>
-                        <input type="text" ngModel="" name="pays" class="form-control" id="paysform" required>
+                        <input type="text" name="pays" class="form-control" id="paysform" required/>
+                        <input type="hidden" name="_next" value="https://thearchreservation.eu/#/merci"/>
+                        <input type="hidden" name="_subject" value="Demande de réservation."/>
+                        <input type="hidden" name="_template" value="table"/>
+                        <input type="hidden" name="données" value="{{donne}}"/>
                     </div>
                 </div>
             </div>
@@ -85,15 +89,24 @@
                     </div>
                 </div>
                 <br>
-                <div>
-                    <h5><strong>Montant total de la commande : {{prixTotal}} €</strong></h5>
-                    <h5><strong>Coût net par passager après impact fiscal : {{prixImpot}} € / personne</strong>
-                    </h5>
-                </div>
             </div>
-            <div>
-                <button class="btn btn-info my-4 btn-block" type="submit">Commander</button>
-            </div>
+            <div class="row">
+        <div class="col-md">
+          <div>
+            <br>
+            <h5><strong>Montant total de la commande : {{prixTotal}} €</strong></h5>
+          </div>
+          <div>
+            <h5><strong>Coût net par passager après impact fiscal : {{prixImpot}} €</strong>
+            </h5>
+          </div>
+        </div>
+        <div class="col-md">
+          <div style="width: 40%; margin-left: 45%; position: relative;">
+            <a class="btn color my-4 btn-block" onclick="document.getElementById('contact-form').submit();">Send</a>
+          </div>
+        </div>
+      </div>
             <p class="text-center">Return to <a href="https://www.the-arch.eu/">The Arch</a> website.
         </form>
     </div>

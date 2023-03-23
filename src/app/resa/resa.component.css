@@ -10,3 +10,14 @@ form {
     padding-top: 1%;
     position: absolute;
 }
+
+.deco{
+    text-decoration: none;
+    color: black;
+    width: 100px;
+}
+
+.color{
+    background-color: rgb(45, 61, 102);
+    color: white;
+}

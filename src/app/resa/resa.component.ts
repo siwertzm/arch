@@ -13,6 +13,8 @@ export class ResaComponent {
   cab: any;
   prixTotal: any;
   prixImpot: any;
+  donne: any;
+  resa: any;
 
   constructor(private reservService: ReservService, private prixService: PrixService, private route: Router){
 
@@ -20,6 +22,11 @@ export class ResaComponent {
 
   ngOnInit(){
     this.commande();
+    this.text(this.cab)
+  }
+
+  text(val: any){
+    this.donne = JSON.stringify(val)
   }
 
   validation(val: any){
@@ -30,5 +37,9 @@ export class ResaComponent {
     this.cab = this.reservService.getNbrCabine();
     this.prixTotal = this.prixService.getPrixTotal();
     this.prixImpot = this.prixService.getPrixImpot();
+  }
+
+  test(){
+    this.route.navigateByUrl('home');
   }
 }

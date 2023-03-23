@@ -105,12 +105,12 @@ export class HomeComponent {
 
     if (this.nbrCabExt >= (this.nbrPerExt/2) && this.nbrCabExt <= this.nbrPerExt){
 
-      this.prixTotExt = (this.nbrCabExt*1000) + ((this.nbrPerExt)*750);
+      this.prixTotExt = Math.round((this.nbrCabExt*1000) + ((this.nbrPerExt)*750));
       this.fiscTotExt = ((((this.nbrCabExt*700) + (this.nbrPerExt*625))*0.34) + ((this.nbrCabExt*300) + (this.nbrPerExt*125)));
       this.totalCout = this.prixTotExt + this.prixTotBalc + this.prixTotLux + this.prixTotSuite + this.prixTotPres;
       this.pers = parseInt(this.nbrPerExt) + parseInt(this.nbrPerBalc) + parseInt(this.nbrPerLux) + parseInt(this.nbrPerSuite) + parseInt(this.nbrPerPres)
-      this.totalFisc = (this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers;
-      this.fiscExt = (this.fiscTotExt)/this.nbrPerExt;
+      this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers);
+      this.fiscExt = Math.round((this.fiscTotExt)/this.nbrPerExt);
       this.msgExt = '';
 
     } else if (this.nbrCabExt > this.nbrPerExt) {
@@ -158,12 +158,12 @@ export class HomeComponent {
 
     } else {
 
-      this.prixTotExt = (this.nbrCabExt*1000) + ((this.nbrPerExt)*750);
+      this.prixTotExt = Math.round((this.nbrCabExt*1000) + ((this.nbrPerExt)*750));
       this.fiscTotExt = ((((this.nbrCabExt*700) + (this.nbrPerExt*625))*0.34) + ((this.nbrCabExt*300) + (this.nbrPerExt*125)));
       this.totalCout = this.prixTotExt + this.prixTotBalc + this.prixTotLux + this.prixTotSuite + this.prixTotPres;
       this.pers = parseInt(this.nbrPerExt) + parseInt(this.nbrPerBalc) + parseInt(this.nbrPerLux) + parseInt(this.nbrPerSuite) + parseInt(this.nbrPerPres)
-      this.totalFisc = (this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers
-      this.fiscExt = (this.fiscTotExt)/this.nbrPerExt;
+      this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers)
+      this.fiscExt = Math.round((this.fiscTotExt)/this.nbrPerExt);
       this.msgExt = '';
     }
   }
@@ -180,12 +180,12 @@ export class HomeComponent {
 
     if (this.nbrCabBalc >= (this.nbrPerBalc/2) && this.nbrCabBalc <= this.nbrPerBalc){
 
-      this.prixTotBalc = (this.nbrCabBalc*1100) + ((this.nbrPerBalc)*800);
+      this.prixTotBalc = Math.round((this.nbrCabBalc*1100) + ((this.nbrPerBalc)*800));
       this.fiscTotBalc = ((((this.nbrCabBalc*770) + (this.nbrPerBalc*665))*0.34) + ((this.nbrCabBalc*330) + (this.nbrPerBalc*135)));
       this.totalCout = this.prixTotExt + this.prixTotBalc + this.prixTotLux + this.prixTotSuite + this.prixTotPres;
       this.pers = parseInt(this.nbrPerExt) + parseInt(this.nbrPerBalc) + parseInt(this.nbrPerLux) + parseInt(this.nbrPerSuite) + parseInt(this.nbrPerPres)
-      this.totalFisc = (this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers
-      this.fiscBalc = this.fiscTotBalc/this.nbrPerBalc;
+      this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers);
+      this.fiscBalc = Math.round(this.fiscTotBalc/this.nbrPerBalc);
       this.msgExtBalc = '';
 
     } else if (this.nbrCabBalc > this.nbrPerBalc) {
@@ -233,12 +233,12 @@ export class HomeComponent {
 
     } else {
 
-      this.prixTotBalc = (this.nbrCabBalc*1100) + ((this.nbrPerBalc)*800);
+      this.prixTotBalc = Math.round((this.nbrCabBalc*1100) + ((this.nbrPerBalc)*800));
       this.fiscTotBalc = ((((this.nbrCabBalc*770) + (this.nbrPerBalc*665))*0.34) + ((this.nbrCabBalc*330) + (this.nbrPerBalc*135)));
       this.totalCout = this.prixTotExt + this.prixTotBalc + this.prixTotLux + this.prixTotSuite + this.prixTotPres;
       this.pers = parseInt(this.nbrPerExt) + parseInt(this.nbrPerBalc) + parseInt(this.nbrPerLux) + parseInt(this.nbrPerSuite) + parseInt(this.nbrPerPres)
-      this.totalFisc = (this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers
-      this.fiscBalc = this.fiscTotBalc/this.nbrPerBalc;
+      this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers);
+      this.fiscBalc = Math.round(this.fiscTotBalc/this.nbrPerBalc);
       this.msgExtBalc = '';
     }
   }
@@ -255,12 +255,12 @@ export class HomeComponent {
 
     if (this.nbrCabLux >= (this.nbrPerLux/2) && this.nbrCabLux <= this.nbrPerLux){
 
-      this.prixTotLux = (this.nbrCabLux*1150) + ((this.nbrPerLux)*825);
+      this.prixTotLux = Math.round((this.nbrCabLux*1150) + ((this.nbrPerLux)*825));
       this.fiscTotLux = ((((this.nbrCabLux*800) + (this.nbrPerLux*675))*0.34) + ((this.nbrCabLux*350) + (this.nbrPerLux*150)));
       this.totalCout = this.prixTotExt + this.prixTotBalc + this.prixTotLux + this.prixTotSuite + this.prixTotPres;
       this.pers = parseInt(this.nbrPerExt) + parseInt(this.nbrPerBalc) + parseInt(this.nbrPerLux) + parseInt(this.nbrPerSuite) + parseInt(this.nbrPerPres)
-      this.totalFisc = (this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers
-      this.fiscLux = this.fiscTotLux/this.nbrPerLux;
+      this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers);
+      this.fiscLux = Math.round(this.fiscTotLux/this.nbrPerLux);
       this.msgLuxe = '';
 
     } else if (this.nbrCabLux > this.nbrPerLux) {
@@ -307,12 +307,12 @@ export class HomeComponent {
 
     } else {
 
-      this.prixTotLux = (this.nbrCabLux*1150) + ((this.nbrPerLux)*825);
+      this.prixTotLux = Math.round((this.nbrCabLux*1150) + ((this.nbrPerLux)*825));
       this.fiscTotLux = ((((this.nbrCabLux*800) + (this.nbrPerLux*675))*0.34) + ((this.nbrCabLux*350) + (this.nbrPerLux*150)));
       this.totalCout = this.prixTotExt + this.prixTotBalc + this.prixTotLux + this.prixTotSuite + this.prixTotPres;
       this.pers = parseInt(this.nbrPerExt) + parseInt(this.nbrPerBalc) + parseInt(this.nbrPerLux) + parseInt(this.nbrPerSuite) + parseInt(this.nbrPerPres)
-      this.totalFisc = (this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers
-      this.fiscLux = this.fiscTotLux/this.nbrPerLux;
+      this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers);
+      this.fiscLux = Math.round(this.fiscTotLux/this.nbrPerLux);
       this.msgLuxe = '';
     }
   }
@@ -329,12 +329,12 @@ export class HomeComponent {
 
     if (this.nbrCabSuite >= (this.nbrPerSuite/2) && this.nbrCabSuite <= this.nbrPerSuite){
 
-      this.prixTotSuite = (this.nbrCabSuite*1500) + ((this.nbrPerSuite)*1000);
+      this.prixTotSuite = Math.round((this.nbrCabSuite*1500) + ((this.nbrPerSuite)*1000));
       this.fiscTotSuite = ((((this.nbrCabSuite*1050) + (this.nbrPerSuite*825))*0.34) + ((this.nbrCabSuite*450) + (this.nbrPerSuite*175)));
       this.totalCout = this.prixTotExt + this.prixTotBalc + this.prixTotLux + this.prixTotSuite + this.prixTotPres;
       this.pers = parseInt(this.nbrPerExt) + parseInt(this.nbrPerBalc) + parseInt(this.nbrPerLux) + parseInt(this.nbrPerSuite) + parseInt(this.nbrPerPres)
-      this.totalFisc = (this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers
-      this.fiscSuite = this.fiscTotSuite/this.nbrPerSuite;
+      this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers);
+      this.fiscSuite = Math.round(this.fiscTotSuite/this.nbrPerSuite);
       this.msgSuite = '';
 
     } else if (this.nbrCabSuite > this.nbrPerSuite) {
@@ -380,12 +380,12 @@ export class HomeComponent {
 
     } else {
 
-      this.prixTotSuite = (this.nbrCabSuite*1500) + ((this.nbrPerSuite)*1000);
+      this.prixTotSuite = Math.round((this.nbrCabSuite*1500) + ((this.nbrPerSuite)*1000));
       this.fiscTotSuite = ((((this.nbrCabSuite*1050) + (this.nbrPerSuite*825))*0.34) + ((this.nbrCabSuite*450) + (this.nbrPerSuite*175)));
       this.totalCout = this.prixTotExt + this.prixTotBalc + this.prixTotLux + this.prixTotSuite + this.prixTotPres;
       this.pers = parseInt(this.nbrPerExt) + parseInt(this.nbrPerBalc) + parseInt(this.nbrPerLux) + parseInt(this.nbrPerSuite) + parseInt(this.nbrPerPres)
-      this.totalFisc = (this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers
-      this.fiscSuite = this.fiscTotSuite/this.nbrPerSuite;
+      this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers);
+      this.fiscSuite = Math.round(this.fiscTotSuite/this.nbrPerSuite);
       this.msgSuite = '';
     }
   }
@@ -401,12 +401,13 @@ export class HomeComponent {
     this.nbrCabPres = event.target.value;
 
     if (this.nbrCabPres >= (this.nbrPerPres/2) && this.nbrCabPres <= this.nbrPerPres){
-      this.prixTotPres = (this.nbrCabPres*2750) + ((this.nbrPerPres)*1625);
+
+      this.prixTotPres = Math.round((this.nbrCabPres*2750) + ((this.nbrPerPres)*1625));
       this.fiscTotPres = ((((this.nbrCabPres*1750) + (this.nbrPerPres*1375))*0.34) + ((this.nbrCabPres*1000) + (this.nbrPerPres*250)));
       this.totalCout = this.prixTotExt + this.prixTotBalc + this.prixTotLux + this.prixTotSuite + this.prixTotPres;
       this.pers = parseInt(this.nbrPerExt) + parseInt(this.nbrPerBalc) + parseInt(this.nbrPerLux) + parseInt(this.nbrPerSuite) + parseInt(this.nbrPerPres)
-      this.totalFisc = (this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers
-      this.fiscPres = this.fiscTotPres/this.nbrPerPres;
+      this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers);
+      this.fiscPres = Math.round(this.fiscTotPres/this.nbrPerPres);
       this.msgSuitePres = '';
 
     } else if (this.nbrCabPres > this.nbrPerPres) {
@@ -451,18 +452,22 @@ export class HomeComponent {
 
     } else {
 
-      this.prixTotPres = (this.nbrCabPres*2750) + ((this.nbrPerPres)*1625);
+      this.prixTotPres = Math.round((this.nbrCabPres*2750) + ((this.nbrPerPres)*1625));
       this.fiscTotPres = ((((this.nbrCabPres*1750) + (this.nbrPerPres*1375))*0.34) + ((this.nbrCabPres*1000) + (this.nbrPerPres*250)));
       this.totalCout = this.prixTotExt + this.prixTotBalc + this.prixTotLux + this.prixTotSuite + this.prixTotPres;
       this.pers = parseInt(this.nbrPerExt) + parseInt(this.nbrPerBalc) + parseInt(this.nbrPerLux) + parseInt(this.nbrPerSuite) + parseInt(this.nbrPerPres)
-      this.totalFisc = (this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers
-      this.fiscPres = this.fiscTotPres/this.nbrPerPres;
+      this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers);
+      this.fiscPres = Math.round(this.fiscTotPres/this.nbrPerPres);
       this.msgSuitePres = '';
     }
   }
 
   reload(): void {
     window.location.reload();
+  }
+
+  test(){
+    this.route.navigateByUrl("test");
   }
 
 }

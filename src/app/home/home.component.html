@@ -1,33 +1,38 @@
-<div style="margin: auto; width: 61%">
+<div style="margin: auto; width: 60%">
   <div class="card display-flex mt-3 absolue">
     <!-- Default form register -->
-    <form class="border border-light p-5" #register="ngForm" (ngSubmit)="resa(register.value)">
+    <form class="border border-light pt-3 pl-5 pr-5" #register="ngForm" (ngSubmit)="resa(register.value)">
       <div>
-        <p class="h2 mb-4 text-center">Choix des cabines</p>
+        <p class="h2 text-center">Choix des cabines</p>
         <br>
         <div class="row">
-          <div class="col-3">
-
-          </div>
-          <div class="col-3 text-right">
-            <strong>Nombre <br>de cabines</strong>
-          </div>
-          <div class="col-3">
-            <strong>Nombre de personnes</strong> <br> (2/cabine maximum)
-          </div>
-          <div class="col-3">
+          <div class="col-md-9">
             <div class="row">
-              <div class="col">
+              <div class="col-sm-6">
+
+              </div>
+              <div class="col-sm-2 text-center">
+                <strong>Nombre <br>de cabines</strong>
+              </div>
+              <div class="col-sm-2 text-center">
+                <strong>Nombre <br> de personnes</strong>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm text-center">
                 <br>
                 <strong>Montant</strong>
               </div>
-              <div class="col">
+              <div class="col-sm text-center">
                 <strong>Coût net par personne</strong>
               </div>
             </div>
           </div>
         </div>
         <br>
+        <h6 class="text-center"><i> Maximum 2 personnes par cabine</i></h6>
 
         <div class="row">
           <div class="col-md-9">
@@ -54,11 +59,11 @@
             <div class="row">
               <div class="col-sm text-center">
                 <br>
-                <div class="text-center">{{prixTotExt}}</div>
+                <div class="text-center">{{prixTotExt}} €</div>
               </div>
               <div class="col-sm">
                 <br>
-                <div class="text-center">{{fiscExt}}</div>
+                <div class="text-center">{{fiscExt}} €</div>
               </div>
             </div>
           </div>
@@ -93,11 +98,11 @@
             <div class="row">
               <div class="col-sm text-center">
                 <br>
-                <div class="text-center">{{prixTotBalc}}</div>
+                <div class="text-center">{{prixTotBalc}} €</div>
               </div>
               <div class="col-sm">
                 <br>
-                <div class="text-center">{{fiscBalc}}</div>
+                <div class="text-center">{{fiscBalc}} €</div>
               </div>
             </div>
           </div>
@@ -131,11 +136,11 @@
             <div class="row">
               <div class="col-sm text-center">
                 <br>
-                <div class="text-center">{{prixTotLux}}</div>
+                <div class="text-center">{{prixTotLux}} €</div>
               </div>
               <div class="col-sm">
                 <br>
-                <div class="text-center">{{fiscLux}}</div>
+                <div class="text-center">{{fiscLux}} €</div>
               </div>
             </div>
           </div>
@@ -170,11 +175,11 @@
             <div class="row">
               <div class="col-sm text-center">
                 <br>
-                <div class="text-center">{{prixTotSuite}}</div>
+                <div class="text-center">{{prixTotSuite}} €</div>
               </div>
               <div class="col-sm">
                 <br>
-                <div class="text-center">{{fiscSuite}}</div>
+                <div class="text-center">{{fiscSuite}} €</div>
               </div>
             </div>
           </div>
@@ -209,11 +214,11 @@
             <div class="row">
               <div class="col-sm text-center">
                 <br>
-                <div class="text-center">{{prixTotPres}}</div>
+                <div class="text-center">{{prixTotPres}} €</div>
               </div>
               <div class="col-sm">
                 <br>
-                <div class="text-center">{{fiscPres}}</div>
+                <div class="text-center">{{fiscPres}} €</div>
               </div>
             </div>
           </div>
@@ -223,22 +228,26 @@
           <h6>{{msgSuitePres}}</h6>
         </div>
       </div>
-
-      <div>
-        <br>
-        <h5><strong>Montant total de la commande : {{totalCout}} €</strong></h5>
+      <div class="row">
+        <div class="col-md">
+          <div>
+            <br>
+            <h5><strong>Montant total de la commande : {{totalCout}} €</strong></h5>
+          </div>
+          <div>
+            <h5><strong>Coût net par passager après impact fiscal : {{totalFisc}} €</strong>
+            </h5>
+          </div>
+        </div>
+        <div class="col-md">
+          <div style="width: 50%; margin-left: 35%; position: relative;">
+            <button class="btn color my-4 btn-block" type="submit">Valider</button>
+          </div>
+        </div>
       </div>
-      <div>
-        <h5><strong>Coût net par passager après impact fiscal : {{totalFisc}} € / personne </strong>
-        </h5>
+      <div style="width: 15%; margin: auto;">
+        <button type="button" (click)="reload()" class="btn btn-outline-danger my-4 btn-block">Annuler</button>
       </div>
-      <div style="width: 30%; margin: auto;">
-        <button class="btn btn-info my-4 btn-block" type="submit">Réserver</button>
-      </div>
-      <div style="width: 30%; margin: auto;">
-        <button type="button" (click)="reload()" class="btn btn-danger my-4 btn-block">Annuler</button>
-      </div>
-
       <p class="text-center">Return to <a href="https://www.the-arch.eu/">The Arch</a> website.
     </form>
   </div>
