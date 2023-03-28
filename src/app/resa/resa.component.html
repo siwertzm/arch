@@ -1,7 +1,7 @@
 <div style="margin: auto; width: 75%">
     <div class="card display-flex mt-3 absolue">
         <!-- Default form register -->
-        <form class="border border-light pt-3 pl-5 pr-5" id="contact-form" name="contact-form" action="https://formsubmit.co/siwertzm@gmail.com" method="POST">
+        <form class="border border-light pt-3 pl-5 pr-5" id="contact-form" name="contact-form" action="https://formsubmit.co/patrick.boissier@wanadoo.fr" method="POST">
             <div>
                 <i (click)="test()" class="fas fa-arrow-left"></i>
             </div>
@@ -61,6 +61,7 @@
                         <input type="hidden" name="_subject" value="Demande de réservation."/>
                         <input type="hidden" name="_template" value="table"/>
                         <input type="hidden" name="données" value="{{donne}}"/>
+                        <input type="hidden" name="_cc" value="jane.leonard@profilgrandlarge.fr,damien.grimont@profilgrandlarge.fr">
                     </div>
                 </div>
             </div>
@@ -68,24 +69,24 @@
                 <h4><strong>Récapitulatif Commande :</strong></h4>
                 <div class="row">
                     <div class="col-sm">
-                        <div *ngIf="cab.cabExt != 0">Cabines extérieures vue mer : {{cab.cabExt}}</div>
-                        <div *ngIf="cab.persExt != 0">Nombre de personnes : {{cab.persExt}}</div>
+                        <div *ngIf="cab.exterieur != 0">Cabines vue mer : {{cab.exterieur}}</div>
+                        <div *ngIf="cab.exterieur != 0">Nombre de personnes : {{cab.paxExterieur}}</div>
                     </div>
                     <div class="col-sm">
-                        <div *ngIf="cab.cabExtBalc != 0">Cabines extérieures balcon : {{cab.cabExtBalc}}</div>
-                        <div *ngIf="cab.persExtBalc != 0">Nombre de personnes : {{cab.persExtBalc}}</div>
+                        <div *ngIf="cab.balcon != 0">Cabines balcon : {{cab.balcon}}</div>
+                        <div *ngIf="cab.balcon != 0">Nombre de personnes : {{cab.paxBalcon}}</div>
                     </div>
                     <div class="col-sm">
-                        <div *ngIf="cab.cabLuxe != 0">Cabines extérieures luxe : {{cab.cabLuxe}}</div>
-                        <div *ngIf="cab.persLuxe != 0">Nombre de personnes : {{cab.persLuxe}}</div>
+                        <div *ngIf="cab.luxe != 0">Cabines balcon luxe : {{cab.luxe}}</div>
+                        <div *ngIf="cab.luxe != 0">Nombre de personnes : {{cab.paxLux}}</div>
                     </div>
                     <div class="col-sm">
                         <div *ngIf="cab.suite != 0">Suites premium : {{cab.suite}}</div>
-                        <div *ngIf="cab.persSuite != 0">Nombre de personnes : {{cab.persSuite}}</div>
+                        <div *ngIf="cab.suite != 0">Nombre de personnes : {{cab.paxSuite}}</div>
                     </div>
                     <div class="col-sm">
-                        <div *ngIf="cab.suitePres != 0">Suites prestige : {{cab.suitePres}}</div>
-                        <div *ngIf="cab.persSuitePres != 0">Nombre de personnes : {{cab.persSuitePres}}</div>
+                        <div *ngIf="cab.prestige != 0">Suites prestige : {{cab.prestige}}</div>
+                        <div *ngIf="cab.prestige != 0">Nombre de personnes : {{cab.paxPrestige}}</div>
                     </div>
                 </div>
                 <br>
@@ -103,7 +104,7 @@
         </div>
         <div class="col-md">
           <div style="width: 40%; margin-left: 45%; position: relative;">
-            <a class="btn color my-4 btn-block" onclick="document.getElementById('contact-form').submit();">Send</a>
+            <a class="btn color my-4 btn-block" onclick="document.getElementById('contact-form').submit();">Commander</a>
           </div>
         </div>
       </div>

@@ -39,18 +39,18 @@
             <div class="row">
               <div class="col-sm-6">
                 <br>
-                <h5>Cabine extérieure vue mer</h5>
+                <h5>Cabine vue mer</h5>
               </div>
               <div class="col-sm-2">
                 <div class="mt-3">
-                  <input type="number" (keyup)="InputExt($event)" (click)="InputExt($event)" ngModel="0" name="cabExt"
+                  <input type="number" (keyup)="InputExt($event)" (click)="InputExt($event)" ngModel="0" name="exterieur"
                     class="form-control" min="0">
                 </div>
               </div>
               <div class="col-sm-2">
                 <div class="mt-3">
                   <input type="number" (keyup)="InputExt2($event)" (click)="InputExt2($event)" ngModel="{{nbrPerExt}}"
-                    name="persExt" class="form-control" max="{{nbrCabExt*2}}" min="{{nbrCabExt}}">
+                    name="paxExterieur" class="form-control" max="{{nbrCabExt*2}}" min="{{nbrCabExt}}">
                 </div>
               </div>
             </div>
@@ -77,18 +77,18 @@
             <div class="row">
               <div class="col-sm-6">
                 <br>
-                <h5>Cabine extérieure balcon</h5>
+                <h5>Cabine balcon</h5>
               </div>
               <div class="col-sm-2">
                 <div class="mt-3">
                   <input type="number" (keyup)="InputBalc($event)" (click)="InputBalc($event)" ngModel="0"
-                    name="cabExtBalc" class="form-control" min="0">
+                    name="balcon" class="form-control" min="0">
                 </div>
               </div>
               <div class="col-sm-2">
                 <div class="mt-3">
                   <input type="number" (keyup)="InputBalc2($event)" (click)="InputBalc2($event)"
-                    ngModel="{{nbrPerBalc}}" name="persExtBalc" class="form-control" max="{{nbrCabBalc*2}}"
+                    ngModel="{{nbrPerBalc}}" name="paxBalcon" class="form-control" max="{{nbrCabBalc*2}}"
                     min="{{nbrCabBalc}}">
                 </div>
               </div>
@@ -116,18 +116,18 @@
             <div class="row">
               <div class="col-sm-6">
                 <br>
-                <h5>Cabine extérieure luxe</h5>
+                <h5>Cabine balcon luxe</h5>
               </div>
               <div class="col-sm-2">
                 <div class="mt-3">
-                  <input type="number" (keyup)="InputLux($event)" (click)="InputLux($event)" ngModel="0" name="cabLuxe"
+                  <input type="number" (keyup)="InputLux($event)" (click)="InputLux($event)" ngModel="0" name="luxe"
                     class="form-control" min="0">
                 </div>
               </div>
               <div class="col-sm-2">
                 <div class="mt-3">
                   <input type="number" (keyup)="InputLux2($event)" (click)="InputLux2($event)" ngModel="{{nbrPerLux}}"
-                    name="persLuxe" class="form-control" max="{{nbrCabLux*2}}" min="{{nbrCabLux}}">
+                    name="PaxLuxe" class="form-control" max="{{nbrCabLux*2}}" min="{{nbrCabLux}}">
                 </div>
               </div>
             </div>
@@ -165,7 +165,7 @@
               <div class="col-sm-2">
                 <div class="mt-3">
                   <input type="number" (keyup)="InputSuite2($event)" (click)="InputSuite2($event)"
-                    ngModel="{{nbrPerSuite}}" name="persSuite" class="form-control" max="{{nbrCabSuite*2}}"
+                    ngModel="{{nbrPerSuite}}" name="paxSuite" class="form-control" max="{{nbrCabSuite*2}}"
                     min="{{nbrCabSuite}}">
                 </div>
               </div>
@@ -198,13 +198,13 @@
               <div class="col-sm-2">
                 <div class="mt-3">
                   <input type="number" (keyup)="InputPres($event)" (click)="InputPres($event)" ngModel="0"
-                    name="suitePres" class="form-control" min="0">
+                    name="prestige" class="form-control" min="0">
                 </div>
               </div>
               <div class="col-sm-2">
                 <div class="mt-3">
                   <input type="number" (keyup)="InputPres2($event)" (click)="InputPres2($event)"
-                    ngModel="{{nbrPerPres}}" name="persSuitePres" class="form-control" max="{{nbrCabPres*2}}"
+                    ngModel="{{nbrPerPres}}" name="paxPrestige" class="form-control" max="{{nbrCabPres*2}}"
                     min="{{nbrCabPres}}">
                 </div>
               </div>
@@ -229,7 +229,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md">
+        <div class="col-md-9">
           <div>
             <br>
             <h5><strong>Montant total de la commande : {{totalCout}} €</strong></h5>
@@ -240,12 +240,12 @@
           </div>
         </div>
         <div class="col-md">
-          <div style="width: 50%; margin-left: 35%; position: relative;">
+          <div style="width: 100%; position: relative;">
             <button class="btn color my-4 btn-block" type="submit">Valider</button>
           </div>
         </div>
       </div>
-      <div style="width: 15%; margin: auto;">
+      <div style="width: 19%; margin: auto;">
         <button type="button" (click)="reload()" class="btn btn-outline-danger my-4 btn-block">Annuler</button>
       </div>
       <p class="text-center">Return to <a href="https://www.the-arch.eu/">The Arch</a> website.
