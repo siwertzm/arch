@@ -1,7 +1,7 @@
 <div style="margin: auto; width: 75%">
     <div class="card display-flex mt-3 absolue">
         <!-- Default form register -->
-        <form class="border border-light pt-3 pl-5 pr-5" id="contact-form" name="contact-form" action="https://formsubmit.co/patrick.boissier@wanadoo.fr" method="POST">
+        <form class="border border-light pt-3 pl-5 pr-5" id="contact-form" name="contact-form" action="https://formsubmit.co/siwertzm@gmail.com" method="POST">
             <div>
                 <i (click)="test()" class="fas fa-arrow-left"></i>
             </div>
@@ -50,20 +50,28 @@
                 <div class="col-sm-2">
                     <div class="md-form">
                         <label class="form-label" for="codeform">Code Postal</label>
-                        <input required type="number"  name="codePostal" class="form-control" id="codeform"/>
+                        <input  type="number"  name="codePostal" class="form-control" id="codeform" required/>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="md-form">
                         <label class="form-label" for="paysform">Pays</label>
-                        <input type="text" name="pays" class="form-control" id="paysform" required/>
+                        <input type="text" name="pays" class="form-control" id="paysform" />
                         <input type="hidden" name="_next" value="https://thearchreservation.eu/#/merci"/>
-                        <input type="hidden" name="_subject" value="Demande de réservation."/>
+                        <input type="hidden" name="_subject" value="Demande de réservation Particulier."/>
                         <input type="hidden" name="_template" value="table"/>
-                        <input type="hidden" name="données" value="{{donne}}"/>
+                        <input type="hidden" name="Cabine Extérieur" value="{{nbrCabExt}}" />
+                        <input type="hidden" name="Passager Extérieur" value="{{nbrPerExt}}" />
+                        <input type="hidden" name="Cabine Balcon" value="{{nbrCabBalc}}" />
+                        <input type="hidden" name="Passager Balcon" value="{{nbrPerBalc}}" />
+                        <input type="hidden" name="Cabine Luxe" value="{{nbrCabLux}}" />
+                        <input type="hidden" name="Passager Luxe" value="{{nbrPerLux}}" />
+                        <input type="hidden" name="Cabine Suite" value="{{nbrCabSuite}}" />
+                        <input type="hidden" name="Passager Suite" value="{{nbrPerSuite}}" />
+                        <input type="hidden" name="Cabine Suite Prestige" value="{{nbrCabPres}}" />
+                        <input type="hidden" name="Passager Suite Prestige" value="{{nbrPerPres}}" />
                         <input type="hidden" name="mecenat" value="{{prixAvec}}"/>
                         <input type="hidden" name="cabine" value="{{prixSans}}"/>
-                        <input type="hidden" name="_cc" value="carine.legargean@profilgrandlarge.fr,damien.grimont@profilgrandlarge.fr">
                     </div>
                 </div>
             </div>
@@ -71,24 +79,24 @@
                 <h4><strong>Récapitulatif Commande :</strong></h4>
                 <div class="row">
                     <div class="col-sm">
-                        <div *ngIf="cab.exterieur != 0">Cabines vue mer : {{cab.exterieur}}</div>
-                        <div *ngIf="cab.exterieur != 0">Nombre de personnes : {{cab.paxExterieur}}</div>
+                        <div *ngIf="nbrCabExt != 0">Cabines vue mer : {{nbrCabExt}}</div>
+                        <div *ngIf="nbrCabExt != 0">Nombre de personnes : {{nbrPerExt}}</div>
                     </div>
                     <div class="col-sm">
-                        <div *ngIf="cab.balcon != 0">Cabines balcon : {{cab.balcon}}</div>
-                        <div *ngIf="cab.balcon != 0">Nombre de personnes : {{cab.paxBalcon}}</div>
+                        <div *ngIf="nbrCabBalc != 0">Cabines balcon : {{nbrCabBalc}}</div>
+                        <div *ngIf="nbrCabBalc != 0">Nombre de personnes : {{nbrPerBalc}}</div>
                     </div>
                     <div class="col-sm">
-                        <div *ngIf="cab.luxe != 0">Cabines balcon luxe : {{cab.luxe}}</div>
-                        <div *ngIf="cab.luxe != 0">Nombre de personnes : {{cab.paxLux}}</div>
+                        <div *ngIf="nbrCabLux != 0">Cabines balcon luxe : {{nbrCabLux}}</div>
+                        <div *ngIf="nbrCabLux != 0">Nombre de personnes : {{nbrPerLux}}</div>
                     </div>
                     <div class="col-sm">
-                        <div *ngIf="cab.suite != 0">Suites premium : {{cab.suite}}</div>
-                        <div *ngIf="cab.suite != 0">Nombre de personnes : {{cab.paxSuite}}</div>
+                        <div *ngIf="nbrCabSuite != 0">Suites premium : {{nbrCabSuite}}</div>
+                        <div *ngIf="nbrCabSuite != 0">Nombre de personnes : {{nbrPerSuite}}</div>
                     </div>
                     <div class="col-sm">
-                        <div *ngIf="cab.prestige != 0">Suites prestige : {{cab.prestige}}</div>
-                        <div *ngIf="cab.prestige != 0">Nombre de personnes : {{cab.paxPrestige}}</div>
+                        <div *ngIf="nbrCabPres != 0">Suites prestige : {{nbrCabPres}}</div>
+                        <div *ngIf="nbrCabPres != 0">Nombre de personnes : {{nbrPerPres}}</div>
                     </div>
                 </div>
                 <br>
@@ -99,14 +107,11 @@
             <br>
             <h5><strong>Montant total de la commande : {{prixTotal}} €</strong></h5>
           </div>
-          <div>
-            <h5><strong>Coût net par passager après impact fiscal : {{prixImpot}} €</strong>
-            </h5>
-          </div>
         </div>
         <div class="col-md">
           <div style="width: 40%; margin-left: 45%; position: relative;">
-            <a class="btn color my-4 btn-block" onclick="document.getElementById('contact-form').submit();">Commander</a>
+            <button class="btn color my-4 btn-block"
+                            type="submit">Commander</button>
           </div>
         </div>
       </div>

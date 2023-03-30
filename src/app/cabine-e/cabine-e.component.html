@@ -1,0 +1,313 @@
+<div style="margin: auto; width: 67%">
+  <div class="card display-flex mt-3 absolue">
+    <!-- Default form register -->
+    <form class="border border-light pt-3 pl-5 pr-5">
+      <div>
+        <p class="h2 text-center">Choix des cabines</p>
+        <br>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row text-center">
+              <div class="col-sm-6">
+
+              </div>
+              <div class="col-sm-2">
+                <strong>Nombre <br>de cabines</strong>
+              </div>
+              <div class="col-sm-2">
+                <strong>Nombre <br> de personnes</strong>
+              </div>
+              <div class="col-sm-2">
+                <strong>Participation <br> aux seminaire</strong>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm text-center">
+                <br>
+                <strong>Montant</strong>
+              </div>
+              <div class="col-sm text-center">
+                <strong>Montant après réduction</strong>
+              </div>
+              <div class="col-sm text-center">
+                <strong>Coût net par personne</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <h6 class="text-center"><i> Maximum 2 personnes par cabine</i></h6>
+
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-sm-6">
+                <br>
+                <h5>Cabine vue mer</h5>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputExt($event)" (click)="InputExt($event)" value="0"
+                    name="exterieur" class="form-control" min="0">
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputExt2($event)" (click)="InputExt2($event)" value="{{nbrPerExt}}"
+                    name="paxExterieur" class="form-control" max="{{nbrCabExt*2}}" min="{{nbrCabExt}}">
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputExt3($event)" (click)="InputExt3($event)" value="0"
+                    name="semiExt" class="form-control" max="{{nbrPerExt}}" min="0">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{prixTotExt}} €</div>
+              </div>
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{reducExt}} €</div>
+              </div>
+              <div class="col-sm">
+                <br>
+                <div class="text-center">{{fiscExt}} €</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rouge text-center">
+          <h6>{{msgExt}}</h6>
+        </div>
+
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-sm-6">
+                <br>
+                <h5>Cabine balcon</h5>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputBalc($event)" (click)="InputBalc($event)" value="0" name="balcon"
+                    class="form-control" min="0">
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputBalc2($event)" (click)="InputBalc2($event)"
+                    value="{{nbrPerBalc}}" name="paxBalcon" class="form-control" max="{{nbrCabBalc*2}}"
+                    min="{{nbrCabBalc}}">
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputBalc3($event)" (click)="InputBalc3($event)" value="0"
+                    name="semiBlac" class="form-control" max="{{nbrPerBalc}}" min="0">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{prixTotBalc}} €</div>
+              </div>
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{reducBalc}} €</div>
+              </div>
+              <div class="col-sm">
+                <br>
+                <div class="text-center">{{fiscBalc}} €</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rouge text-center">
+          <h6>{{msgExtBalc}}</h6>
+        </div>
+
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-sm-6">
+                <br>
+                <h5>Cabine balcon luxe</h5>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputLux($event)" (click)="InputLux($event)" value="0" name="luxe"
+                    class="form-control" min="0">
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputLux2($event)" (click)="InputLux2($event)" value="{{nbrPerLux}}"
+                    name="PaxLuxe" class="form-control" max="{{nbrCabLux*2}}" min="{{nbrCabLux}}">
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputLux3($event)" (click)="InputLux3($event)" value="0"
+                    name="semiLuxe" class="form-control" max="{{nbrPerLux}}" min="0">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{prixTotLux}} €</div>
+              </div>
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{reducLux}} €</div>
+              </div>
+              <div class="col-sm">
+                <br>
+                <div class="text-center">{{fiscLux}} €</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rouge text-center">
+          <h6>{{msgLuxe}}</h6>
+        </div>
+
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-sm-6">
+                <br>
+                <h5>Suite Premium</h5>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputSuite($event)" (click)="InputSuite($event)" value="0"
+                    name="suite" class="form-control" min="0">
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputSuite2($event)" (click)="InputSuite2($event)"
+                    value="{{nbrPerSuite}}" name="paxSuite" class="form-control" max="{{nbrCabSuite*2}}"
+                    min="{{nbrCabSuite}}">
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputSuite3($event)" (click)="InputSuite3($event)" value="0"
+                    name="semiSuite" class="form-control" max="{{nbrPerSuite}}" min="0">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{prixTotSuite}} €</div>
+              </div>
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{reducSuite}} €</div>
+              </div>
+              <div class="col-sm">
+                <br>
+                <div class="text-center">{{fiscSuite}} €</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rouge text-center">
+          <h6>{{msgSuite}}</h6>
+        </div>
+
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-sm-6">
+                <br>
+                <h5>Suite Prestige</h5>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputPres($event)" (click)="InputPres($event)" value="0"
+                    name="prestige" class="form-control" min="0">
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputPres2($event)" (click)="InputPres2($event)"
+                    value="{{nbrPerPres}}" name="paxPrestige" class="form-control" max="{{nbrCabPres*2}}"
+                    min="{{nbrCabPres}}">
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="mt-3">
+                  <input type="number" (keyup)="InputPres3($event)" (click)="InputPres3($event)" value="0"
+                    name="semiPres" class="form-control" max="{{nbrPerPres}}" min="0">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="row">
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{prixTotPres}} €</div>
+              </div>
+              <div class="col-sm text-center">
+                <br>
+                <div class="text-center">{{reducPres}} €</div>
+              </div>
+              <div class="col-sm">
+                <br>
+                <div class="text-center">{{fiscPres}} €</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rouge text-center">
+          <br>
+          <h6>{{msgSuitePres}}</h6>
+        </div>
+      </div>
+
+
+      <div class="text-right">
+        <div>
+          <br>
+          <h5><strong>Montant total de la commande : {{totalCout}} €</strong></h5>
+          <h5><strong>Montant total après réduction de la commande : {{totalReduc}} €</strong></h5>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md">
+          <div style="width: 50%; margin: auto; position: relative;">
+            <button type="button" (click)="reload()" class="btn btn-outline-danger my-4 btn-block">Annuler</button>
+          </div>
+        </div>
+        <div class="col-md">
+          <div style="width: 50%; position: relative; margin: auto;">
+            <button class="btn color my-4 btn-block" type="submit" (click)="resa()">Valider</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center">Return to <a href="https://www.the-arch.eu/">The Arch</a> website.
+    </form>
+  </div>
+</div>

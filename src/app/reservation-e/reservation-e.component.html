@@ -1,0 +1,191 @@
+<div style="margin: auto; width: 75%">
+    <div class="card display-flex mt-3 absolue">
+        <!-- Default form register -->
+        <form class="border border-light pt-3 pl-5 pr-5" id="contact-form" name="contact-form"
+            action="https://formsubmit.co/siwertzm@gmail.com" method="POST">
+            <div>
+                <i (click)="test()" class="fas fa-arrow-left"></i>
+            </div>
+            <p class="h4 mb-4 text-center">Renseignements entreprise</p>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="md-form">
+                        <label class="form-label" for="nomform">Nom</label>
+                        <input type="text" name="nom" class="form-control" id="nomform" required  />
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="md-form">
+                        <label class="form-label" for="prenomform">Prénom</label>
+                        <input type="text" name="prénom" class="form-control" id="prenomform"  required />
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="md-form">
+                        <label class="form-label" for="entrepriseform">Entreprise</label>
+                        <input type="text" name="entreprise" class="form-control" id="entrepriseform" required />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="md-form">
+                        <label class="form-label" for="activiteform">Activité</label>
+                        <input type="text" name="activite" class="form-control" id="activiteform"  required />
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="md-form">
+                        <label class="form-label" for="tvaform">N° TVA</label>
+                        <input type="text" name="tva" class="form-control" id="tvaform" required />
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="md-form">
+                        <label class="form-label" for="siretform">SIRET</label>
+                        <input type="text" name="siret" class="form-control" id="siretform" required />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="md-form">
+                        <label class="form-label" for="mailform">Adresse mail</label>
+                        <input type="email" name="mail" class="form-control" id="mailform" required />
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="md-form">
+                        <label class="form-label" for="telform">Téléphone</label>
+                        <input type="text" name="téléphone" class="form-control" id="telform"  required/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="md-form">
+                        <label class="form-label" for="rueform">Adresse</label>
+                        <input type="text" name="adresse" class="form-control" id="rueform" required />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="md-form">
+                        <label class="form-label" for="villeform">Ville</label>
+                        <input type="text" name="ville" class="form-control" id="villeform" required />
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="md-form">
+                        <label class="form-label" for="codeform">Code Postal</label>
+                        <input  type="number" name="codePostal" class="form-control" id="codeform" required />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="md-form">
+                        <label class="form-label" for="paysform">Pays</label>
+                        <input type="text" name="pays" class="form-control" id="paysform" required />
+                    </div>
+                </div>
+            </div>
+            <p class="h5">Contact pour suivi opérationnel du dossier :</p>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="md-form">
+                        <label class="form-label" for="nom2form">Nom</label>
+                        <input type="text" name="nomContact" class="form-control" id="nom2form"  required/>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="md-form">
+                        <label class="form-label" for="prenom2form">Prénom</label>
+                        <input type="text" name="prénomContact" class="form-control" id="prenom2form" required />
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="md-form">
+                        <label class="form-label" for="fonctionform">Fonction</label>
+                        <input type="text" name="fonction" class="form-control" id="fonctionform" required />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="md-form">
+                        <label class="form-label" for="mail2form">Adresse mail</label>
+                        <input type="email" name="mailContact" class="form-control" id="mail2form"  required/>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="md-form">
+                        <label class="form-label" for="telform">Téléphone</label>
+                        <input type="text" name="téléphoneContact" class="form-control" id="telform" required />
+                        <input type="hidden" name="_next" value="https://thearchreservation.eu/#/merci" />
+                        <input type="hidden" name="_subject" value="Demande de réservation Entreprise." />
+                        <input type="hidden" name="_template" value="table" />
+                        <input type="hidden" name="Cabine Extérieur" value="{{nbrCabExt}}" />
+                        <input type="hidden" name="Passager Extérieur" value="{{nbrPerExt}}" />
+                        <input type="hidden" name="Participants séminaire Extérieur" value="{{nbrSemExt}}" />
+                        <input type="hidden" name="Cabine Balcon" value="{{nbrCabBalc}}" />
+                        <input type="hidden" name="Passager Balcon" value="{{nbrPerBalc}}" />
+                        <input type="hidden" name="Participants séminaire Balcon" value="{{nbrSemBalc}}" />
+                        <input type="hidden" name="Cabine Luxe" value="{{nbrCabLux}}" />
+                        <input type="hidden" name="Passager Luxe" value="{{nbrPerLux}}" />
+                        <input type="hidden" name="Participants séminaire Luxe" value="{{nbrSemLux}}" />
+                        <input type="hidden" name="Cabine Suite" value="{{nbrCabSuite}}" />
+                        <input type="hidden" name="Passager Suite" value="{{nbrPerSuite}}" />
+                        <input type="hidden" name="Participants séminaire Suite" value="{{nbrSemSuite}}" />
+                        <input type="hidden" name="Cabine Suite Prestige" value="{{nbrCabPres}}" />
+                        <input type="hidden" name="Passager Suite Prestige" value="{{nbrPerPres}}" />
+                        <input type="hidden" name="Participants séminaire Suite Prestige" value="{{nbrSemPres}}" />
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3">
+                <h4><strong>Récapitulatif Commande :</strong></h4>
+                <div class="row">
+                    <div class="col-sm">
+                        <div *ngIf="nbrCabExt != 0">Cabines vue mer : {{nbrCabExt}}</div>
+                        <div *ngIf="nbrCabExt != 0">Nombre de personnes : {{nbrPerExt}}</div>
+                        <div *ngIf="nbrCabExt != 0">Participants séminaire : {{nbrSemExt}}</div>
+                    </div>
+                    <div class="col-sm">
+                        <div *ngIf="nbrCabBalc != 0">Cabines balcon : {{nbrCabBalc}}</div>
+                        <div *ngIf="nbrCabBalc != 0">Nombre de personnes : {{nbrPerBalc}}</div>
+                        <div *ngIf="nbrCabBalc != 0">Participants séminaire : {{nbrSemBalc}}</div>
+                    </div>
+                    <div class="col-sm">
+                        <div *ngIf="nbrCabLux != 0">Cabines balcon luxe : {{nbrCabLux}}</div>
+                        <div *ngIf="nbrCabLux != 0">Nombre de personnes : {{nbrPerLux}}</div>
+                        <div *ngIf="nbrCabLux != 0">Participants séminaire : {{nbrSemLux}}</div>
+                    </div>
+                    <div class="col-sm">
+                        <div *ngIf="nbrCabSuite != 0">Suites premium : {{nbrCabSuite}}</div>
+                        <div *ngIf="nbrCabSuite != 0">Nombre de personnes : {{nbrPerSuite}}</div>
+                        <div *ngIf="nbrCabSuite != 0">Participants séminaire : {{nbrSemSuite}}</div>
+                    </div>
+                    <div class="col-sm">
+                        <div *ngIf="nbrCabPres != 0">Suites prestige : {{nbrCabPres}}</div>
+                        <div *ngIf="nbrCabPres != 0">Nombre de personnes : {{nbrPerPres}}</div>
+                        <div *ngIf="nbrCabPres != 0">Participants séminaire : {{nbrSemPres}}</div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <div>
+                        <br>
+                        <h5><strong>Montant total de la commande : {{prixTotal}} €</strong></h5>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div style="width: 40%; margin-left: 45%; position: relative;">
+                        <button class="btn color my-4 btn-block"
+                            type="submit">Commander</button>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center">Return to <a href="https://www.the-arch.eu/">The Arch</a> website.
+        </form>
+    </div>
+</div>
