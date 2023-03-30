@@ -25,4 +25,24 @@ export class PrixService {
     let prixImpot: any = localStorage.getItem('prixImpot');
     return JSON.parse(prixImpot);
   }
+
+
+
+  setPrixAvec(val: any){
+    localStorage.setItem('mecenat', JSON.stringify(val));
+  }
+
+  getPrixAvec(){
+    let prixTotal: any = localStorage.getItem('mecenat');
+    return JSON.parse(prixTotal);
+  }
+
+  setPrixSans(val: any){
+    localStorage.setItem('cabine', JSON.stringify(val));
+  }
+
+  getPrixSans(){
+    let prixImpot: any = localStorage.getItem('cabine');
+    return JSON.parse(prixImpot);
+  }
 }

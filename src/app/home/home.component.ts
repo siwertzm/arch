@@ -55,6 +55,9 @@ export class HomeComponent {
   fiscTotPres: any = 0;
   fiscPres: any = 0;
 
+  prixAvecFisc: any = 0;
+  prixSansFisc: any = 0;
+
 
 
 
@@ -84,6 +87,8 @@ export class HomeComponent {
       this.reservService.setNbrCabine(val);
       this.prixService.setPrixTotal(this.totalCout);
       this.prixService.setPrixImpot(this.totalFisc);
+      this.prixService.setPrixAvec(this.prixAvecFisc);
+      this.prixService.setPrixSans(this.prixSansFisc);
       this.route.navigateByUrl('resa');
     }
 
@@ -112,6 +117,8 @@ export class HomeComponent {
       this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers);
       this.fiscExt = Math.round((this.fiscTotExt)/this.nbrPerExt);
       this.msgExt = '';
+      this.prixAvecFisc = (this.nbrCabExt*700) + (this.nbrPerExt*625) + (this.nbrCabBalc*770) + (this.nbrPerBalc*640) + (this.nbrCabLux*980) + (this.nbrPerLux*760) + (this.nbrCabSuite*1400) + (this.nbrPerSuite*1000) + (this.nbrCabPres*2450) + (this.nbrPerPres*1600);
+      this.prixSansFisc = (this.nbrCabExt*300) + (this.nbrPerExt*125) + (this.nbrCabBalc*330) + (this.nbrPerBalc*160) + (this.nbrCabLux*420) + (this.nbrPerLux*190) + (this.nbrCabSuite*600) + (this.nbrPerSuite*250) + (this.nbrCabPres*1050) + (this.nbrPerPres*400);
 
     } else if (this.nbrCabExt > this.nbrPerExt) {
 
@@ -120,6 +127,8 @@ export class HomeComponent {
       this.fiscTotExt = 0;
       this.totalCout = 0;
       this.totalFisc = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
       this.fiscExt = 0;
 
     } else {
@@ -128,6 +137,8 @@ export class HomeComponent {
       this.prixTotExt = 0;
       this.fiscTotExt = 0;
       this.totalCout = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
       this.totalFisc = 0;
       this.fiscExt = 0;
 
@@ -145,6 +156,8 @@ export class HomeComponent {
       this.fiscTotExt = 0;
       this.totalCout = 0;
       this.totalFisc = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
       this.fiscExt = 0;
 
     } else if(parseInt(this.nbrPerExt) < parseInt(this.nbrCabExt)) {
@@ -152,6 +165,8 @@ export class HomeComponent {
       this.prixTotExt = 0;
       this.fiscTotExt = 0;
       this.totalCout = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
       this.fiscExt = 0;
       this.totalFisc = 0;
       this.msgExt = 'Le nombre de personness ne peux pas être inférieur au nombre de cabines';
@@ -165,6 +180,9 @@ export class HomeComponent {
       this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers)
       this.fiscExt = Math.round((this.fiscTotExt)/this.nbrPerExt);
       this.msgExt = '';
+      this.prixAvecFisc = (this.nbrCabExt*700) + (this.nbrPerExt*625) + (this.nbrCabBalc*770) + (this.nbrPerBalc*640) + (this.nbrCabLux*980) + (this.nbrPerLux*760) + (this.nbrCabSuite*1400) + (this.nbrPerSuite*1000) + (this.nbrCabPres*2450) + (this.nbrPerPres*1600);
+      this.prixSansFisc = (this.nbrCabExt*300) + (this.nbrPerExt*125) + (this.nbrCabBalc*330) + (this.nbrPerBalc*160) + (this.nbrCabLux*420) + (this.nbrPerLux*190) + (this.nbrCabSuite*600) + (this.nbrPerSuite*250) + (this.nbrCabPres*1050) + (this.nbrPerPres*400);
+
     }
   }
 
@@ -187,6 +205,9 @@ export class HomeComponent {
       this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers);
       this.fiscBalc = Math.round(this.fiscTotBalc/this.nbrPerBalc);
       this.msgExtBalc = '';
+      this.prixAvecFisc = (this.nbrCabExt*700) + (this.nbrPerExt*625) + (this.nbrCabBalc*770) + (this.nbrPerBalc*640) + (this.nbrCabLux*980) + (this.nbrPerLux*760) + (this.nbrCabSuite*1400) + (this.nbrPerSuite*1000) + (this.nbrCabPres*2450) + (this.nbrPerPres*1600);
+      this.prixSansFisc = (this.nbrCabExt*300) + (this.nbrPerExt*125) + (this.nbrCabBalc*330) + (this.nbrPerBalc*160) + (this.nbrCabLux*420) + (this.nbrPerLux*190) + (this.nbrCabSuite*600) + (this.nbrPerSuite*250) + (this.nbrCabPres*1050) + (this.nbrPerPres*400);
+
 
     } else if (this.nbrCabBalc > this.nbrPerBalc) {
 
@@ -194,7 +215,8 @@ export class HomeComponent {
       this.prixTotBalc = 0;
       this.fiscTotBalc = 0;
       this.totalFisc = 0;
-      this.totalCout = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
       this.fiscBalc = 0;
 
     } else {
@@ -203,6 +225,8 @@ export class HomeComponent {
       this.prixTotBalc = 0;
       this.fiscTotBalc = 0;
       this.totalCout = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
       this.totalFisc = 0;
       this.fiscBalc = 0;
 
@@ -219,12 +243,16 @@ export class HomeComponent {
       this.prixTotBalc = 0;
       this.fiscTotBalc = 0;
       this.totalCout = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
       this.totalFisc = 0;
       this.fiscBalc = 0;
 
     } else if(parseInt(this.nbrPerBalc) < parseInt(this.nbrCabBalc)) {
 
       this.prixTotBalc = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
       this.fiscTotBalc = 0;
       this.totalFisc = 0;
       this.totalCout = 0;
@@ -240,6 +268,9 @@ export class HomeComponent {
       this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers);
       this.fiscBalc = Math.round(this.fiscTotBalc/this.nbrPerBalc);
       this.msgExtBalc = '';
+      this.prixAvecFisc = (this.nbrCabExt*700) + (this.nbrPerExt*625) + (this.nbrCabBalc*770) + (this.nbrPerBalc*640) + (this.nbrCabLux*980) + (this.nbrPerLux*760) + (this.nbrCabSuite*1400) + (this.nbrPerSuite*1000) + (this.nbrCabPres*2450) + (this.nbrPerPres*1600);
+      this.prixSansFisc = (this.nbrCabExt*300) + (this.nbrPerExt*125) + (this.nbrCabBalc*330) + (this.nbrPerBalc*160) + (this.nbrCabLux*420) + (this.nbrPerLux*190) + (this.nbrCabSuite*600) + (this.nbrPerSuite*250) + (this.nbrCabPres*1050) + (this.nbrPerPres*400);
+
     }
   }
 
@@ -262,6 +293,9 @@ export class HomeComponent {
       this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers);
       this.fiscLux = Math.round(this.fiscTotLux/this.nbrPerLux);
       this.msgLuxe = '';
+      this.prixAvecFisc = (this.nbrCabExt*700) + (this.nbrPerExt*625) + (this.nbrCabBalc*770) + (this.nbrPerBalc*640) + (this.nbrCabLux*980) + (this.nbrPerLux*760) + (this.nbrCabSuite*1400) + (this.nbrPerSuite*1000) + (this.nbrCabPres*2450) + (this.nbrPerPres*1600);
+      this.prixSansFisc = (this.nbrCabExt*300) + (this.nbrPerExt*125) + (this.nbrCabBalc*330) + (this.nbrPerBalc*160) + (this.nbrCabLux*420) + (this.nbrPerLux*190) + (this.nbrCabSuite*600) + (this.nbrPerSuite*250) + (this.nbrCabPres*1050) + (this.nbrPerPres*400);
+
 
     } else if (this.nbrCabLux > this.nbrPerLux) {
 
@@ -269,6 +303,8 @@ export class HomeComponent {
       this.prixTotLux = 0;
       this.fiscTotLux = 0;
       this.totalCout = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
       this.totalFisc = 0;
       this.fiscLux = 0;
 
@@ -279,6 +315,8 @@ export class HomeComponent {
       this.fiscTotLux = 0;
       this.totalFisc = 0;
       this.totalCout = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
       this.fiscLux = 0;
     }
   }
@@ -293,6 +331,8 @@ export class HomeComponent {
       this.prixTotLux = 0;
       this.fiscTotLux = 0;
       this.totalFisc = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
       this.totalCout = 0;
       this.fiscLux = 0;
 
@@ -301,6 +341,8 @@ export class HomeComponent {
       this.prixTotLux = 0;
       this.fiscTotLux = 0;
       this.totalFisc = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
       this.totalCout = 0;
       this.fiscLux = 0;
       this.msgLuxe = 'Le nombre de personness ne peux pas être inférieur au nombre de cabines';
@@ -314,6 +356,9 @@ export class HomeComponent {
       this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers);
       this.fiscLux = Math.round(this.fiscTotLux/this.nbrPerLux);
       this.msgLuxe = '';
+      this.prixAvecFisc = (this.nbrCabExt*700) + (this.nbrPerExt*625) + (this.nbrCabBalc*770) + (this.nbrPerBalc*640) + (this.nbrCabLux*980) + (this.nbrPerLux*760) + (this.nbrCabSuite*1400) + (this.nbrPerSuite*1000) + (this.nbrCabPres*2450) + (this.nbrPerPres*1600);
+      this.prixSansFisc = (this.nbrCabExt*300) + (this.nbrPerExt*125) + (this.nbrCabBalc*330) + (this.nbrPerBalc*160) + (this.nbrCabLux*420) + (this.nbrPerLux*190) + (this.nbrCabSuite*600) + (this.nbrPerSuite*250) + (this.nbrCabPres*1050) + (this.nbrPerPres*400);
+
     }
   }
 
@@ -336,6 +381,9 @@ export class HomeComponent {
       this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers);
       this.fiscSuite = Math.round(this.fiscTotSuite/this.nbrPerSuite);
       this.msgSuite = '';
+      this.prixAvecFisc = (this.nbrCabExt*700) + (this.nbrPerExt*625) + (this.nbrCabBalc*770) + (this.nbrPerBalc*640) + (this.nbrCabLux*980) + (this.nbrPerLux*760) + (this.nbrCabSuite*1400) + (this.nbrPerSuite*1000) + (this.nbrCabPres*2450) + (this.nbrPerPres*1600);
+      this.prixSansFisc = (this.nbrCabExt*300) + (this.nbrPerExt*125) + (this.nbrCabBalc*330) + (this.nbrPerBalc*160) + (this.nbrCabLux*420) + (this.nbrPerLux*190) + (this.nbrCabSuite*600) + (this.nbrPerSuite*250) + (this.nbrCabPres*1050) + (this.nbrPerPres*400);
+
 
     } else if (this.nbrCabSuite > this.nbrPerSuite) {
 
@@ -343,6 +391,8 @@ export class HomeComponent {
       this.prixTotSuite = 0;
       this.fiscTotSuite = 0;
       this.totalFisc = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
       this.totalCout = 0;
       this.fiscSuite = 0;
 
@@ -352,6 +402,8 @@ export class HomeComponent {
       this.prixTotSuite = 0;
       this.fiscTotSuite = 0;
       this.totalFisc = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
       this.totalCout = 0;
       this.fiscSuite = 0;
     }
@@ -367,6 +419,8 @@ export class HomeComponent {
       this.fiscTotSuite = 0;
       this.totalCout = 0;
       this.totalFisc = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
       this.fiscSuite = 0;
 
     } else if(parseInt(this.nbrPerSuite) < parseInt(this.nbrCabSuite)) {
@@ -374,6 +428,8 @@ export class HomeComponent {
       this.prixTotSuite = 0;
       this.totalFisc = 0;
       this.fiscTotSuite = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
       this.totalCout = 0;
       this.fiscSuite = 0;
       this.msgSuite = 'Le nombre de personness ne peux pas être inférieur au nombre de cabines';
@@ -387,6 +443,9 @@ export class HomeComponent {
       this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers);
       this.fiscSuite = Math.round(this.fiscTotSuite/this.nbrPerSuite);
       this.msgSuite = '';
+      this.prixAvecFisc = (this.nbrCabExt*700) + (this.nbrPerExt*625) + (this.nbrCabBalc*770) + (this.nbrPerBalc*640) + (this.nbrCabLux*980) + (this.nbrPerLux*760) + (this.nbrCabSuite*1400) + (this.nbrPerSuite*1000) + (this.nbrCabPres*2450) + (this.nbrPerPres*1600);
+      this.prixSansFisc = (this.nbrCabExt*300) + (this.nbrPerExt*125) + (this.nbrCabBalc*330) + (this.nbrPerBalc*160) + (this.nbrCabLux*420) + (this.nbrPerLux*190) + (this.nbrCabSuite*600) + (this.nbrPerSuite*250) + (this.nbrCabPres*1050) + (this.nbrPerPres*400);
+
     }
   }
 
@@ -409,6 +468,9 @@ export class HomeComponent {
       this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers);
       this.fiscPres = Math.round(this.fiscTotPres/this.nbrPerPres);
       this.msgSuitePres = '';
+      this.prixAvecFisc = (this.nbrCabExt*700) + (this.nbrPerExt*625) + (this.nbrCabBalc*770) + (this.nbrPerBalc*640) + (this.nbrCabLux*980) + (this.nbrPerLux*760) + (this.nbrCabSuite*1400) + (this.nbrPerSuite*1000) + (this.nbrCabPres*2450) + (this.nbrPerPres*1600);
+      this.prixSansFisc = (this.nbrCabExt*300) + (this.nbrPerExt*125) + (this.nbrCabBalc*330) + (this.nbrPerBalc*160) + (this.nbrCabLux*420) + (this.nbrPerLux*190) + (this.nbrCabSuite*600) + (this.nbrPerSuite*250) + (this.nbrCabPres*1050) + (this.nbrPerPres*400);
+
 
     } else if (this.nbrCabPres > this.nbrPerPres) {
 
@@ -417,6 +479,8 @@ export class HomeComponent {
       this.fiscTotPres = 0;
       this.totalFisc = 0;
       this.totalCout = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
       this.fiscPres = 0;
 
     } else {
@@ -426,6 +490,8 @@ export class HomeComponent {
       this.totalFisc = 0;
       this.fiscTotPres = 0;
       this.fiscPres = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
     }
   }
 
@@ -441,6 +507,8 @@ export class HomeComponent {
       this.totalFisc = 0;
       this.totalCout = 0;
       this.fiscPres = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
 
     } else if(parseInt(this.nbrPerPres) < parseInt(this.nbrCabPres)) {
       this.prixTotPres = 0;
@@ -448,6 +516,9 @@ export class HomeComponent {
       this.totalFisc = 0;
       this.totalCout = 0;
       this.fiscPres = 0;
+      this.prixAvecFisc = 0;
+      this.prixSansFisc = 0;
+
       this.msgSuitePres = 'Le nombre de personness ne peux pas être inférieur au nombre de cabines';
 
     } else {
@@ -459,6 +530,9 @@ export class HomeComponent {
       this.totalFisc = Math.round((this.fiscTotExt + this.fiscTotBalc + this.fiscTotLux + this.fiscTotSuite + this.fiscTotPres)/this.pers);
       this.fiscPres = Math.round(this.fiscTotPres/this.nbrPerPres);
       this.msgSuitePres = '';
+      this.prixAvecFisc = (this.nbrCabExt*700) + (this.nbrPerExt*625) + (this.nbrCabBalc*770) + (this.nbrPerBalc*640) + (this.nbrCabLux*980) + (this.nbrPerLux*760) + (this.nbrCabSuite*1400) + (this.nbrPerSuite*1000) + (this.nbrCabPres*2450) + (this.nbrPerPres*1600);
+      this.prixSansFisc = (this.nbrCabExt*300) + (this.nbrPerExt*125) + (this.nbrCabBalc*330) + (this.nbrPerBalc*160) + (this.nbrCabLux*420) + (this.nbrPerLux*190) + (this.nbrCabSuite*600) + (this.nbrPerSuite*250) + (this.nbrCabPres*1050) + (this.nbrPerPres*400);
+
     }
   }
 

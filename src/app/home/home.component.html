@@ -8,13 +8,13 @@
         <div class="row">
           <div class="col-md-9">
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-sm-4">
 
               </div>
-              <div class="col-sm-2 text-center">
+              <div class="col-sm-4 text-right">
                 <strong>Nombre <br>de cabines</strong>
               </div>
-              <div class="col-sm-2 text-center">
+              <div class="col-sm-4 text-left">
                 <strong>Nombre <br> de personnes</strong>
               </div>
             </div>
@@ -229,7 +229,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-9">
+        <div class="col-md">
           <div>
             <br>
             <h5><strong>Montant total de la commande : {{totalCout}} €</strong></h5>
@@ -239,15 +239,24 @@
             </h5>
           </div>
         </div>
-        <div class="col-md">
-          <div style="width: 100%; position: relative;">
-            <button class="btn color my-4 btn-block" type="submit">Valider</button>
+        <div class="col-md text-right">
+          <div>
+            <br>
+            <h5><strong>Part donnant lieu à une déduction fiscale : {{prixAvecFisc}} €</strong></h5>
+          </div>
+          <div>
+            <h5><strong>Part ne donnant pas lieu à une déduction fiscale : {{prixSansFisc}} €</strong>
+            </h5>
           </div>
         </div>
       </div>
-      <div style="width: 19%; margin: auto;">
+      <div style="width: 19%; position: relative; margin: auto;">
+        <button class="btn color my-4 btn-block" type="submit">Valider</button>
+      </div>
+      <div style="width: 19%; margin: auto; position: relative;">
         <button type="button" (click)="reload()" class="btn btn-outline-danger my-4 btn-block">Annuler</button>
       </div>
+      
       <p class="text-center">Return to <a href="https://www.the-arch.eu/">The Arch</a> website.
     </form>
   </div>

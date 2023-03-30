@@ -15,6 +15,8 @@ export class ResaComponent {
   prixImpot: any;
   donne: any;
   resa: any;
+  prixAvec: any;
+  prixSans: any;
 
   constructor(private reservService: ReservService, private prixService: PrixService, private route: Router){
 
@@ -37,6 +39,8 @@ export class ResaComponent {
     this.cab = this.reservService.getNbrCabine();
     this.prixTotal = this.prixService.getPrixTotal();
     this.prixImpot = this.prixService.getPrixImpot();
+    this.prixAvec = this.prixService.getPrixAvec();
+    this.prixSans = this.prixService.getPrixSans();
   }
 
   test(){
