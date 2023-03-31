@@ -1187,6 +1187,8 @@ export class CabineEComponent {
       this.fiscTotPres = (((this.reducPres/3)*0.75) + (((this.reducPres/3)*2)*0.4));
       this.fiscPres = Math.round((this.fiscTotPres)/this.nbrPerPres);
       this.msgSuitePres = '';
+
+      
     }
   }
 
