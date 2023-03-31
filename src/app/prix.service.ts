@@ -45,4 +45,13 @@ export class PrixService {
     let prixImpot: any = localStorage.getItem('cabine');
     return JSON.parse(prixImpot);
   }
+
+  setPrixReduc(val: any){
+    localStorage.setItem('prixReduc', val);
+  }
+
+  getPrixReduc(){
+    let prixReduc: any = localStorage.getItem('prixReduc');
+    return prixReduc;
+  }
 }

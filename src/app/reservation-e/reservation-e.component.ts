@@ -39,6 +39,8 @@ export class ReservationEComponent {
   nbrPerPres: any;
   nbrSemPres: any;
 
+  prixReduc: any;
+
 
 
   constructor(private reservService: ReservService, private prixService: PrixService, private route: Router) {
@@ -61,6 +63,7 @@ export class ReservationEComponent {
   commande() {
     this.cab = this.reservService.getNbrCabine();
     this.prixTotal = this.prixService.getPrixTotal();
+    this.prixReduc = this.prixService.getPrixReduc();
     this.prixImpot = this.prixService.getPrixImpot();
     this.prixAvec = this.prixService.getPrixAvec();
     this.prixSans = this.prixService.getPrixSans();

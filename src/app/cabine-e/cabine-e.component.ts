@@ -109,6 +109,7 @@ export class CabineEComponent {
       this.reservService.setNbrSemiPres(this.nbrSemPres)
 
       this.prixService.setPrixTotal(this.totalCout);
+      this.prixService.setPrixReduc(this.totalReduc);
       this.route.navigateByUrl('reservation-e');
     }
   }
