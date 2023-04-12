@@ -18,7 +18,7 @@
                 <strong>Nombre <br> de personnes</strong>
               </div>
               <div class="col-sm-2">
-                <strong>Participation <br> aux seminaire</strong>
+                <strong>Participation <br> au séminaire</strong>
               </div>
             </div>
           </div>
@@ -289,8 +289,14 @@
       <div class="text-right">
         <div>
           <br>
-          <h5><strong>Montant total de la commande : {{totalCout}} €</strong></h5>
-          <h5><strong>Montant total après réduction de la commande : {{totalReduc}} €</strong></h5>
+          <h5><strong>Montant total de la commande : {{totalReduc}} € HT</strong></h5>
+        </div>
+        <div>
+          <h5>Part soumise à TVA : {{totalHT}} € HT {{totalTTC}} € TTC</h5>
+        </div>
+        <div>
+          <h5>Part mécénat (donnant lieu à une déduction fiscale) : {{totalMecenat}} €
+          </h5>
         </div>
       </div>
 

@@ -20,6 +20,9 @@ export class CabineEComponent {
 
   totalCout: any = 0;
   totalReduc: any = 0;
+  totalHT: any = 0;
+  totalTTC: any = 0;
+  totalMecenat: any = 0;
 
 
   nbrCabExt: any = 0;
@@ -172,6 +175,9 @@ export class CabineEComponent {
       this.fiscSuite = Math.round((this.fiscTotSuite)/this.nbrPerSuite);
       this.fiscTotPres = (((this.reducPres/3)*0.75) + (((this.reducPres/3)*2)*0.4));
       this.fiscPres = Math.round((this.fiscTotPres)/this.nbrPerPres);
+      this.totalHT = Math.round(this.totalReduc/3);
+      this.totalTTC = Math.round((this.totalReduc/3)*1.2);
+      this.totalMecenat = Math.round((this.totalReduc/3)*2);
       this.msgExt = '';
 
     } else if (this.nbrCabExt > this.nbrPerExt) {
@@ -181,6 +187,10 @@ export class CabineEComponent {
       this.fiscTotExt = 0;
       this.totalCout = 0;
       this.fiscExt = 0;
+      
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
 
     } else {
 
@@ -189,6 +199,9 @@ export class CabineEComponent {
       this.fiscTotExt = 0;
       this.totalCout = 0;
       this.fiscExt = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
 
     }
   }
@@ -269,6 +282,9 @@ export class CabineEComponent {
       this.fiscSuite = Math.round((this.fiscTotSuite)/this.nbrPerSuite);
       this.fiscTotPres = (((this.reducPres/3)*0.75) + (((this.reducPres/3)*2)*0.4));
       this.fiscPres = Math.round((this.fiscTotPres)/this.nbrPerPres);
+      this.totalHT = Math.round(this.totalReduc/3);
+      this.totalTTC = Math.round((this.totalReduc/3)*1.2);
+      this.totalMecenat = Math.round((this.totalReduc/3)*2);
       this.msgExt = '';
     }
   }
@@ -283,6 +299,9 @@ export class CabineEComponent {
       this.prixTotExt = 0;
       this.fiscTotExt = 0;
       this.totalCout = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.fiscExt = 0;
 
     } else if(parseInt(this.nbrSemExt) < 0) {
@@ -290,6 +309,9 @@ export class CabineEComponent {
       this.prixTotExt = 0;
       this.fiscTotExt = 0;
       this.totalCout = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.fiscExt = 0;
       this.msgExt = 'Saisie incorrect';
 
@@ -341,6 +363,9 @@ export class CabineEComponent {
       this.fiscSuite = Math.round((this.fiscTotSuite)/this.nbrPerSuite);
       this.fiscTotPres = (((this.reducPres/3)*0.75) + (((this.reducPres/3)*2)*0.4));
       this.fiscPres = Math.round((this.fiscTotPres)/this.nbrPerPres);
+      this.totalHT = Math.round(this.totalReduc/3);
+      this.totalTTC = Math.round((this.totalReduc/3)*1.2);
+      this.totalMecenat = Math.round((this.totalReduc/3)*2);
       this.msgExt = '';
     }
   }
@@ -403,12 +428,18 @@ export class CabineEComponent {
       this.fiscSuite = Math.round((this.fiscTotSuite)/this.nbrPerSuite);
       this.fiscTotPres = (((this.reducPres/3)*0.75) + (((this.reducPres/3)*2)*0.4));
       this.fiscPres = Math.round((this.fiscTotPres)/this.nbrPerPres);
+      this.totalHT = Math.round(this.totalReduc/3);
+      this.totalTTC = Math.round((this.totalReduc/3)*1.2);
+      this.totalMecenat = Math.round((this.totalReduc/3)*2);
       this.msgExtBalc = '';
 
     } else if (this.nbrCabBalc > this.nbrPerBalc) {
 
       this.msgExtBalc = 'Le nombre de cabines ne peux pas être supérieur au nombre de personnes';
       this.prixTotBalc = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.fiscTotBalc = 0;
       this.fiscBalc = 0;
 
@@ -418,6 +449,9 @@ export class CabineEComponent {
       this.prixTotBalc = 0;
       this.fiscTotBalc = 0;
       this.totalCout = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.fiscBalc = 0;
 
     }
@@ -431,6 +465,9 @@ export class CabineEComponent {
 
       this.msgExtBalc = 'Le nombre de personnes doit être inférieur au double du nombre de cabines.';
       this.prixTotBalc = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.fiscTotBalc = 0;
       this.totalCout = 0;
       this.fiscBalc = 0;
@@ -439,6 +476,9 @@ export class CabineEComponent {
 
       this.prixTotBalc = 0;
       this.fiscTotBalc = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.totalCout = 0;
       this.fiscBalc = 0;
       this.msgExtBalc = 'Le nombre de personnes ne peux pas être inférieur au nombre de cabines';
@@ -449,6 +489,9 @@ export class CabineEComponent {
       this.prixTotBalc = 0;
       this.fiscTotBalc = 0;
       this.totalCout = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.fiscBalc = 0;
 
     } else {
@@ -499,6 +542,9 @@ export class CabineEComponent {
       this.fiscSuite = Math.round((this.fiscTotSuite)/this.nbrPerSuite);
       this.fiscTotPres = (((this.reducPres/3)*0.75) + (((this.reducPres/3)*2)*0.4));
       this.fiscPres = Math.round((this.fiscTotPres)/this.nbrPerPres);
+      this.totalHT = Math.round(this.totalReduc/3);
+      this.totalTTC = Math.round((this.totalReduc/3)*1.2);
+      this.totalMecenat = Math.round((this.totalReduc/3)*2);
       this.msgExtBalc = '';
     }
   }
@@ -513,6 +559,9 @@ export class CabineEComponent {
       this.prixTotBalc = 0;
       this.fiscTotBalc = 0;
       this.totalCout = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.fiscBalc = 0;
 
     } else if(parseInt(this.nbrSemBalc) < 0) {
@@ -520,6 +569,9 @@ export class CabineEComponent {
       this.prixTotBalc = 0;
       this.fiscTotBalc = 0;
       this.totalCout = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.fiscBalc = 0;
       this.msgExtBalc = 'Saisie incorrect';
 
@@ -571,6 +623,9 @@ export class CabineEComponent {
       this.fiscSuite = Math.round((this.fiscTotSuite)/this.nbrPerSuite);
       this.fiscTotPres = (((this.reducPres/3)*0.75) + (((this.reducPres/3)*2)*0.4));
       this.fiscPres = Math.round((this.fiscTotPres)/this.nbrPerPres);
+      this.totalHT = Math.round(this.totalReduc/3);
+      this.totalTTC = Math.round((this.totalReduc/3)*1.2);
+      this.totalMecenat = Math.round((this.totalReduc/3)*2);
       this.msgExtBalc = '';
     }
   }
@@ -633,6 +688,9 @@ export class CabineEComponent {
       this.fiscSuite = Math.round((this.fiscTotSuite)/this.nbrPerSuite);
       this.fiscTotPres = (((this.reducPres/3)*0.75) + (((this.reducPres/3)*2)*0.4));
       this.fiscPres = Math.round((this.fiscTotPres)/this.nbrPerPres);
+      this.totalHT = Math.round(this.totalReduc/3);
+      this.totalTTC = Math.round((this.totalReduc/3)*1.2);
+      this.totalMecenat = Math.round((this.totalReduc/3)*2);
       this.msgLuxe = '';
 
     } else if (this.nbrCabLux > this.nbrPerLux) {
@@ -641,6 +699,9 @@ export class CabineEComponent {
       this.prixTotLux = 0;
       this.fiscTotLux = 0;
       this.totalCout = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.fiscLux = 0;
 
     } else {
@@ -649,6 +710,9 @@ export class CabineEComponent {
       this.prixTotLux = 0;
       this.fiscTotLux = 0;
       this.totalCout = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.fiscLux = 0;
     }
   }
@@ -662,6 +726,9 @@ export class CabineEComponent {
       this.msgLuxe = 'Le nombre de personnes doit être inférieur au double du nombre de cabines.';
       this.prixTotLux = 0;
       this.fiscTotLux = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.totalCout = 0;
       this.fiscLux = 0;
 
@@ -670,6 +737,9 @@ export class CabineEComponent {
       this.prixTotLux = 0;
       this.fiscTotLux = 0;
       this.totalCout = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.fiscLux = 0;
       this.msgLuxe = 'Le nombre de personnes ne peux pas être inférieur au nombre de cabines';
 
@@ -678,6 +748,9 @@ export class CabineEComponent {
       this.msgLuxe = 'Le nombre de participants doit être inférieur ou égal nombre de passagers.';
       this.prixTotLux = 0;
       this.fiscTotLux = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.totalCout = 0;
       this.fiscLux = 0;
 
@@ -729,6 +802,9 @@ export class CabineEComponent {
       this.fiscSuite = Math.round((this.fiscTotSuite)/this.nbrPerSuite);
       this.fiscTotPres = (((this.reducPres/3)*0.75) + (((this.reducPres/3)*2)*0.4));
       this.fiscPres = Math.round((this.fiscTotPres)/this.nbrPerPres);
+      this.totalHT = Math.round(this.totalReduc/3);
+      this.totalTTC = Math.round((this.totalReduc/3)*1.2);
+      this.totalMecenat = Math.round((this.totalReduc/3)*2);
       this.msgLuxe = '';
     }
   }
@@ -742,6 +818,9 @@ export class CabineEComponent {
       this.msgLuxe = 'Le nombre de participants doit être inférieur ou égal nombre de passagers.';
       this.prixTotLux = 0;
       this.fiscTotLux = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.totalCout = 0;
       this.fiscLux = 0;
 
@@ -750,6 +829,9 @@ export class CabineEComponent {
       this.prixTotLux = 0;
       this.fiscTotLux = 0;
       this.totalCout = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.fiscLux = 0;
       this.msgLuxe = 'Saisie incorrect';
 
@@ -801,6 +883,9 @@ export class CabineEComponent {
       this.fiscSuite = Math.round((this.fiscTotSuite)/this.nbrPerSuite);
       this.fiscTotPres = (((this.reducPres/3)*0.75) + (((this.reducPres/3)*2)*0.4));
       this.fiscPres = Math.round((this.fiscTotPres)/this.nbrPerPres);
+      this.totalHT = Math.round(this.totalReduc/3);
+      this.totalTTC = Math.round((this.totalReduc/3)*1.2);
+      this.totalMecenat = Math.round((this.totalReduc/3)*2);
       this.msgLuxe = '';
     }
   }
@@ -863,6 +948,9 @@ export class CabineEComponent {
       this.fiscSuite = Math.round((this.fiscTotSuite)/this.nbrPerSuite);
       this.fiscTotPres = (((this.reducPres/3)*0.75) + (((this.reducPres/3)*2)*0.4));
       this.fiscPres = Math.round((this.fiscTotPres)/this.nbrPerPres);
+      this.totalHT = Math.round(this.totalReduc/3);
+      this.totalTTC = Math.round((this.totalReduc/3)*1.2);
+      this.totalMecenat = Math.round((this.totalReduc/3)*2);
       this.msgSuite = '';
 
     } else if (this.nbrCabSuite > this.nbrPerSuite) {
@@ -870,6 +958,9 @@ export class CabineEComponent {
       this.msgSuite = 'Le nombre de cabines ne peux pas être supérieur au nombre de personnes';
       this.prixTotSuite = 0;
       this.fiscTotSuite = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.totalCout = 0;
       this.fiscSuite = 0;
 
@@ -879,6 +970,9 @@ export class CabineEComponent {
       this.prixTotSuite = 0;
       this.fiscTotSuite = 0;
       this.totalCout = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.fiscSuite = 0;
     }
   }
@@ -892,12 +986,18 @@ export class CabineEComponent {
       this.prixTotSuite = 0;
       this.fiscTotSuite = 0;
       this.totalCout = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.fiscSuite = 0;
 
     } else if(parseInt(this.nbrPerSuite) < parseInt(this.nbrCabSuite)) {
 
       this.prixTotSuite = 0;
       this.fiscTotSuite = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.totalCout = 0;
       this.fiscSuite = 0;
       this.msgSuite = 'Le nombre de personnes ne peux pas être inférieur au nombre de cabines';
@@ -908,6 +1008,9 @@ export class CabineEComponent {
       this.prixTotSuite = 0;
       this.fiscTotSuite = 0;
       this.totalCout = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.fiscSuite = 0;
 
     } else {
@@ -958,6 +1061,9 @@ export class CabineEComponent {
       this.fiscSuite = Math.round((this.fiscTotSuite)/this.nbrPerSuite);
       this.fiscTotPres = (((this.reducPres/3)*0.75) + (((this.reducPres/3)*2)*0.4));
       this.fiscPres = Math.round((this.fiscTotPres)/this.nbrPerPres);
+      this.totalHT = Math.round(this.totalReduc/3);
+      this.totalTTC = Math.round((this.totalReduc/3)*1.2);
+      this.totalMecenat = Math.round((this.totalReduc/3)*2);
       this.msgSuite = '';
     }
   }
@@ -971,6 +1077,9 @@ export class CabineEComponent {
       this.msgSuite = 'Le nombre de participants doit être inférieur ou égal nombre de passagers.';
       this.prixTotSuite = 0;
       this.fiscTotSuite = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.totalCout = 0;
       this.fiscSuite = 0;
 
@@ -978,6 +1087,9 @@ export class CabineEComponent {
 
       this.prixTotSuite = 0;
       this.fiscTotSuite = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.totalCout = 0;
       this.fiscSuite = 0;
       this.msgSuite = 'Saisie incorrect';
@@ -1030,6 +1142,9 @@ export class CabineEComponent {
       this.fiscSuite = Math.round((this.fiscTotSuite)/this.nbrPerSuite);
       this.fiscTotPres = (((this.reducPres/3)*0.75) + (((this.reducPres/3)*2)*0.4));
       this.fiscPres = Math.round((this.fiscTotPres)/this.nbrPerPres);
+      this.totalHT = Math.round(this.totalReduc/3);
+      this.totalTTC = Math.round((this.totalReduc/3)*1.2);
+      this.totalMecenat = Math.round((this.totalReduc/3)*2);
       this.msgSuite = '';
     }
   }
@@ -1092,6 +1207,9 @@ export class CabineEComponent {
       this.fiscSuite = Math.round((this.fiscTotSuite)/this.nbrPerSuite);
       this.fiscTotPres = (((this.reducPres/3)*0.75) + (((this.reducPres/3)*2)*0.4));
       this.fiscPres = Math.round((this.fiscTotPres)/this.nbrPerPres);
+      this.totalHT = Math.round(this.totalReduc/3);
+      this.totalTTC = Math.round((this.totalReduc/3)*1.2);
+      this.totalMecenat = Math.round((this.totalReduc/3)*2);
       this.msgSuitePres = '';
 
     } else if (this.nbrCabPres > this.nbrPerPres) {
@@ -1100,6 +1218,9 @@ export class CabineEComponent {
       this.prixTotPres = 0;
       this.fiscTotPres = 0;
       this.totalCout = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.fiscPres = 0;
 
     } else {
@@ -1108,6 +1229,9 @@ export class CabineEComponent {
       this.totalCout = 0;
       this.fiscTotPres = 0;
       this.fiscPres = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
     }
   }
 
@@ -1122,10 +1246,16 @@ export class CabineEComponent {
       this.fiscTotPres = 0;
       this.totalCout = 0;
       this.fiscPres = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
 
     } else if(parseInt(this.nbrPerPres) < parseInt(this.nbrCabPres)) {
       this.prixTotPres = 0;
       this.fiscTotPres = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.totalCout = 0;
       this.fiscPres = 0;
 
@@ -1138,6 +1268,9 @@ export class CabineEComponent {
       this.fiscTotPres = 0;
       this.totalCout = 0;
       this.fiscPres = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
 
     } else {
 
@@ -1187,6 +1320,9 @@ export class CabineEComponent {
       this.fiscSuite = Math.round((this.fiscTotSuite)/this.nbrPerSuite);
       this.fiscTotPres = (((this.reducPres/3)*0.75) + (((this.reducPres/3)*2)*0.4));
       this.fiscPres = Math.round((this.fiscTotPres)/this.nbrPerPres);
+      this.totalHT = Math.round(this.totalReduc/3);
+      this.totalTTC = Math.round((this.totalReduc/3)*1.2);
+      this.totalMecenat = Math.round((this.totalReduc/3)*2);
       this.msgSuitePres = '';
 
       
@@ -1202,6 +1338,9 @@ export class CabineEComponent {
       this.msgSuitePres = 'Le nombre de participants doit être inférieur ou égal nombre de passagers.';
       this.prixTotPres = 0;
       this.fiscTotPres = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.totalCout = 0;
       this.fiscPres = 0;
 
@@ -1210,6 +1349,9 @@ export class CabineEComponent {
       this.prixTotPres = 0;
       this.fiscTotPres = 0;
       this.totalCout = 0;
+      this.totalHT = 0;
+      this.totalTTC = 0;
+      this.totalMecenat = 0;
       this.fiscPres = 0;
       this.msgSuitePres = 'Saisie incorrect';
 
@@ -1261,6 +1403,9 @@ export class CabineEComponent {
       this.fiscSuite = Math.round((this.fiscTotSuite)/this.nbrPerSuite);
       this.fiscTotPres = (((this.reducPres/3)*0.75) + (((this.reducPres/3)*2)*0.4));
       this.fiscPres = Math.round((this.fiscTotPres)/this.nbrPerPres);
+      this.totalHT = Math.round(this.totalReduc/3);
+      this.totalTTC = Math.round((this.totalReduc/3)*1.2);
+      this.totalMecenat = Math.round((this.totalReduc/3)*2);
       this.msgSuitePres = '';
     }
   }
