@@ -99,7 +99,7 @@ export class ReservationEComponent {
   }
 
   test() {
-    this.route.navigateByUrl('home');
+    this.route.navigateByUrl('entreprise');
   }
 
 }

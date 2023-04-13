@@ -74,6 +74,6 @@ export class ResaComponent {
   }
 
   test(){
-    this.route.navigateByUrl('home');
+    this.route.navigateByUrl('particulier');
   }
 }

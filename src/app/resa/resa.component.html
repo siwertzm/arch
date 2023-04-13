@@ -78,25 +78,25 @@
             <div class="mt-3">
                 <h4><strong>Récapitulatif Commande :</strong></h4>
                 <div class="row">
-                    <div class="col-sm">
-                        <div *ngIf="nbrCabExt != 0">Cabines vue mer : {{nbrCabExt}}</div>
-                        <div *ngIf="nbrCabExt != 0">Nombre de personnes : {{nbrPerExt}}</div>
+                    <div class="col-sm" *ngIf="nbrCabExt != 0">
+                        <div>Cabines vue mer : {{nbrCabExt}}</div>
+                        <div>Nombre de personnes : {{nbrPerExt}}</div>
                     </div>
-                    <div class="col-sm">
-                        <div *ngIf="nbrCabBalc != 0">Cabines balcon : {{nbrCabBalc}}</div>
-                        <div *ngIf="nbrCabBalc != 0">Nombre de personnes : {{nbrPerBalc}}</div>
+                    <div class="col-sm" *ngIf="nbrCabBalc != 0">
+                        <div>Cabines balcon : {{nbrCabBalc}}</div>
+                        <div>Nombre de personnes : {{nbrPerBalc}}</div>
                     </div>
-                    <div class="col-sm">
-                        <div *ngIf="nbrCabLux != 0">Cabines balcon luxe : {{nbrCabLux}}</div>
-                        <div *ngIf="nbrCabLux != 0">Nombre de personnes : {{nbrPerLux}}</div>
+                    <div class="col-sm" *ngIf="nbrCabLux != 0">
+                        <div>Cabines balcon luxe : {{nbrCabLux}}</div>
+                        <div>Nombre de personnes : {{nbrPerLux}}</div>
                     </div>
-                    <div class="col-sm">
-                        <div *ngIf="nbrCabSuite != 0">Suites premium : {{nbrCabSuite}}</div>
-                        <div *ngIf="nbrCabSuite != 0">Nombre de personnes : {{nbrPerSuite}}</div>
+                    <div class="col-sm" *ngIf="nbrCabSuite != 0">
+                        <div>Suites premium : {{nbrCabSuite}}</div>
+                        <div>Nombre de personnes : {{nbrPerSuite}}</div>
                     </div>
-                    <div class="col-sm">
-                        <div *ngIf="nbrCabPres != 0">Suites prestige : {{nbrCabPres}}</div>
-                        <div *ngIf="nbrCabPres != 0">Nombre de personnes : {{nbrPerPres}}</div>
+                    <div class="col-sm" *ngIf="nbrCabPres != 0">
+                        <div>Suites prestige : {{nbrCabPres}}</div>
+                        <div>Nombre de personnes : {{nbrPerPres}}</div>
                     </div>
                 </div>
                 <br>
