@@ -39,6 +39,10 @@ export class ReservationEComponent {
   nbrPerPres: any;
   nbrSemPres: any;
 
+  prixHT: any;
+  prixTTC: any;
+  prixMecenat: any;
+
   prixReduc: any;
 
 
@@ -87,6 +91,9 @@ export class ReservationEComponent {
     this.nbrCabPres = this.reservService.getNbrPres();
     this.nbrPerPres = this.reservService.getNbrPersPres();
     this.nbrSemPres = this.reservService.getNbrSemiPres();
+    this.prixHT = this.prixService.getPrixHT();
+    this.prixTTC = this.prixService.getPrixTTC();
+    this.prixMecenat = this.prixService.getPrixMecenat();
 
     this.nbrCabExt = this.reservService.getNbrExt();
   }

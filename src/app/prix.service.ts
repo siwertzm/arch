@@ -54,4 +54,25 @@ export class PrixService {
     let prixReduc: any = localStorage.getItem('prixReduc');
     return prixReduc;
   }
+
+  setPrix(HT: any, TTC: any, mecenat: any ){
+    localStorage.setItem('prixHT', HT);
+    localStorage.setItem('prixTTC', TTC);
+    localStorage.setItem('prixMecenat', mecenat);
+  }
+
+  getPrixHT(){
+    let prixHT: any = localStorage.getItem('prixHT');
+    return prixHT;
+  }
+
+  getPrixTTC(){
+    let prixTTC: any = localStorage.getItem('prixTTC');
+    return prixTTC;
+  }
+
+  getPrixMecenat(){
+    let prixMecenat: any = localStorage.getItem('prixMecenat')
+    return prixMecenat;
+  }
 }

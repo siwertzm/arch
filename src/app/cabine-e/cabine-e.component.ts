@@ -113,7 +113,10 @@ export class CabineEComponent {
 
       this.prixService.setPrixTotal(this.totalCout);
       this.prixService.setPrixReduc(this.totalReduc);
+      this.prixService.setPrix(this.totalHT, this.totalTTC, this.totalMecenat)
       this.route.navigateByUrl('reservation-e');
+
+      ;
     }
   }
 
